@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/Estilo.css">
+    <link rel="icon" type="image/png" href="IMG/Logo-ErsVisa-Original.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>ERS VISA</title>
+</head>
+
+<body>
+    <!--MENU-->
+    <nav class="menu">
+        <div class="logo">
+            <img src="IMG/ErsVisa.jpg" alt="Logo de la empresa">
+            <!--<h1 style="color: #003366; font-family: Arial, sans-serif;">ERSVISA</h1>-->
+        </div>
+        <ul class="menu-list">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="PAGINAS/NuestrasOficinas.html">Nuestras Oficinas</a></li>
+            <li><a href="PAGINAS/Equipo.html">Sobre Nosotros</a></li>
+        </ul>
+    </nav>
+    <!-- Sección de Bienvenida con Banner -->
+    <section class="banner">
+        <div class="slider">
+            <div class="slide active" style="background-image: url('IMG/PeticionFamiliar.jpg');">
+                <div class="caption">
+                    <h2>Bienvenido a ERSVISA</h2>
+                    <p>Explora nuestros servicios de inmigración y legalización</p>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('IMG/CitaConsular.jpg');">
+                <div class="caption">
+                    <h2>Nuestros Servicios</h2>
+                    <p>Ofrecemos asesoramiento legal experto en inmigración</p>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('IMG/ProcesoVisa.png');">
+                <div class="caption">
+                    <h2>Resultados Comprobados</h2>
+                    <p>Más de 1000 clientes satisfechos</p>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <div class="prev">&#10094;</div>
+            <div class="next">&#10095;</div>
+        </div>
+    </section>
+
+    <!--PROCESOS-->
+    <div class="encabezado-procesos">
+        <h2>¿Que hacemos?</h2>
+        <p>Descubre los procesos con los que trabajamos</p>
+    </div>
+    <section class="procesos">
+        <div class="overlay" id="overlay" onclick="toggleModal('proceso1')"></div>
+        <div class="process-card destacado" onclick="toggleModal('proceso1')">
+            <h3>Proceso de Visa</h3>
+        </div>
+        <div class="process-card" onclick="toggleModal('proceso2')">
+            <h3>Peticion Familiar</h3>
+        </div>
+        <div class="process-card" onclick="toggleModal('proceso3')">
+            <h3>Visa de Novio</h3>
+        </div>
+        <div class="process-card destacado" onclick="toggleModal('proceso4')">
+            <h3>Citas Consulares</h3>
+        </div>
+        <div class="process-card" onclick="toggleModal('proceso5')">
+            <h3>Carta de Ruta</h3>
+        </div>
+        <div class="process-card" onclick="toggleModal('proceso6')">
+            <h3>Notarizaciones</h3>
+        </div>
+        <div class="process-card destacado" onclick="toggleModal('proceso7')">
+            <h3>Perdon/Waiver</h3>
+        </div>
+        <div class="process-card" onclick="toggleModal('proceso8')">
+            <h3>Casos Especiales</h3>
+        </div>
+        <div class="process-card" onclick="toggleModal('proceso9')">
+            <h3>Adopciones</h3>
+        </div>
+        <div class="process-card" onclick="toggleModal('proceso10')">
+            <h3>Matrimonios</h3>
+        </div>
+        <div class="process-card" onclick="toggleModal('proceso11')">
+            <h3>Certificaciones Penales</h3>
+        </div>
+        <div class="process-card destacado" onclick="toggleModal('proceso12')">
+            <h3>Pasaporte Americano</h3>
+        </div>
+        <div class="process-card" onclick="toggleModal('proceso13')">
+            <h3>Seguro Social</h3>
+        </div>
+        <div class="process-card destacado" onclick="toggleModal('proceso14')">
+            <h3>Traducciones</h3>
+        </div>
+        <div class="process-card" onclick="toggleModal('proceso15')">
+            <h3>Apostille de Actas</h3>
+        </div>
+        <div class="process-card" onclick="toggleModal('proceso16')">
+            <h3>Declaracion Nacimiento</h3>
+        </div>
+        <div class="process-card destacado" onclick="toggleModal('proceso17')">
+            <h3>Permiso de Menores</h3>
+        </div>
+        <div class="process-card" onclick="toggleModal('proceso18')">
+            <h3>Pago Residencia</h3>
+        </div>
+        <div class="process-card" onclick="toggleModal('proceso19')">
+            <h3>VISA EUROPEA</h3>
+        </div>
+        <div class="process-card" onclick="toggleModal('proceso20')">
+            <h3>Divorcios / Legales</h3>
+        </div>
+
+        <!-- Modal para Proceso de Visa -->
+        <div id="proceso1" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleModal('proceso1')">&times;</span>
+                <h3>Proceso de Visa</h3>
+                <p>Se refiere a las acciones y pasos que una persona debe seguir para obtener el permiso legal necesario
+                    para ingresar a un país extranjero por un período determinado.</p>
+                <img src="IMG/ProcesoVisa.png" alt="Imagen de referencia">
+            </div>
+        </div>
+        <div id="proceso2" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleModal('proceso2')">&times;</span>
+                <h3>Peticion Familiar</h3>
+                <p>Es un proceso legal mediante el cual un ciudadano o residente legal de un país solicita la entrada
+                    y/o el estatus migratorio para un miembro de su familia, generalmente un cónyuge, hijo, padre u otro
+                    pariente cercano. Este proceso permite que los ciudadanos y residentes legales puedan reunirse con
+                    sus familiares en el país de acogida y les brinda la oportunidad de vivir juntos y establecer sus
+                    vidas en ese lugar.</p>
+                <img src="IMG/PeticionFamiliar.jpg" alt="Imagen de referencia">
+            </div>
+        </div>
+        <div id="proceso3" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleModal('proceso3')">&times;</span>
+                <h3>Visa de Novio</h3>
+                <p>Es un tipo de visa que permite que un ciudadano o residente legal de un país traiga a su prometido(a)
+                    extranjero(a) al país para casarse y establecer su vida juntos. Esta visa está diseñada para parejas
+                    que planean casarse y vivir en el mismo país después del matrimonio.</p>
+                <img src="IMG/visanovios.jpg" alt="Imagen de referencia">
+            </div>
+        </div>
+        <div id="proceso4" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleModal('proceso4')">&times;</span>
+                <h3>Citas Consulares</h3>
+                <p>Son reuniones o encuentros programados entre ciudadanos extranjeros y representantes consulares en
+                    una embajada o consulado. Estas citas se realizan para llevar a cabo diversos trámites y servicios
+                    relacionados con asuntos consulares, como solicitudes de visas, pasaportes, servicios notariales y
+                    otros servicios consulares que requieren interacción personal.</p>
+                <img src="IMG/CitaConsular.jpg" alt="Imagen de referencia">
+            </div>
+        </div>
+        <div id="proceso5" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleModal('proceso5')">&times;</span>
+                <h3>Carta de Ruta</h3>
+                <p>Se refiere a un documento que detalla la planificación y la ruta específica que seguirá una aeronave,
+                    embarcación u otro vehículo durante su viaje. Esta carta incluye información detallada sobre los
+                    puntos de inicio y llegada, los puntos intermedios, las altitudes de vuelo, las velocidades, las
+                    frecuencias de radio, las restricciones del espacio aéreo y otros detalles relacionados con la
+                    navegación y la seguridad del viaje.</p>
+                <img src="IMG/CartaRuta.jpg" alt="Imagen de referencia">
+            </div>
+        </div>
+        <div id="proceso6" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleModal('proceso6')">&times;</span>
+                <h3>Peticion Familiar</h3>
+                <p>Descripción detallada de la peticion familiar.</p>
+                <img src="#" alt="Imagen de referencia">
+            </div>
+        </div>
+        <div id="proceso7" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleModal('proceso7')">&times;</span>
+                <h3>Peticion Familiar</h3>
+                <p>Descripción detallada de la peticion familiar.</p>
+                <img src="#" alt="Imagen de referencia">
+            </div>
+        </div>
+        <div id="proceso8" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleModal('proceso8')">&times;</span>
+                <h3>Peticion Familiar</h3>
+                <p>Descripción detallada de la peticion familiar.</p>
+                <img src="#" alt="Imagen de referencia">
+            </div>
+        </div>
+        <div id="proceso9" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleModal('proceso9')">&times;</span>
+                <h3>Peticion Familiar</h3>
+                <p>Descripción detallada de la peticion familiar.</p>
+                <img src="#" alt="Imagen de referencia">
+            </div>
+        </div>
+        <div id="proceso10" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleModal('proceso10')">&times;</span>
+                <h3>Peticion Familiar</h3>
+                <p>Descripción detallada de la peticion familiar.</p>
+                <img src="#" alt="Imagen de referencia">
+            </div>
+        </div>
+        <div id="proceso11" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleModal('proceso11')">&times;</span>
+                <h3>Peticion Familiar</h3>
+                <p>Descripción detallada de la peticion familiar.</p>
+                <img src="#" alt="Imagen de referencia">
+            </div>
+        </div>
+        <div id="proceso12" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleModal('proceso12')">&times;</span>
+                <h3>Peticion Familiar</h3>
+                <p>Descripción detallada de la peticion familiar.</p>
+                <img src="#" alt="Imagen de referencia">
+            </div>
+        </div>
+        <div id="proceso13" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleModal('proceso13')">&times;</span>
+                <h3>Peticion Familiar</h3>
+                <p>Descripción detallada de la peticion familiar.</p>
+                <img src="#" alt="Imagen de referencia">
+            </div>
+        </div>
+        <div id="proceso14" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleModal('proceso14')">&times;</span>
+                <h3>Peticion Familiar</h3>
+                <p>Descripción detallada de la peticion familiar.</p>
+                <img src="#" alt="Imagen de referencia">
+            </div>
+        </div>
+        <div id="proceso15" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleModal('proceso15')">&times;</span>
+                <h3>Peticion Familiar</h3>
+                <p>Descripción detallada de la peticion familiar.</p>
+                <img src="#" alt="Imagen de referencia">
+            </div>
+        </div>
+        <div id="proceso16" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleModal('proceso16')">&times;</span>
+                <h3>Peticion Familiar</h3>
+                <p>Descripción detallada de la peticion familiar.</p>
+                <img src="#" alt="Imagen de referencia">
+            </div>
+        </div>
+        <div id="proceso17" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleModal('proceso17')">&times;</span>
+                <h3>Peticion Familiar</h3>
+                <p>Descripción detallada de la peticion familiar.</p>
+                <img src="#" alt="Imagen de referencia">
+            </div>
+        </div>
+        <div id="proceso18" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleModal('proceso18')">&times;</span>
+                <h3>Peticion Familiar</h3>
+                <p>Descripción detallada de la peticion familiar.</p>
+                <img src="#" alt="Imagen de referencia">
+            </div>
+        </div>
+        <div id="proceso19" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleModal('proceso19')">&times;</span>
+                <h3>Peticion Familiar</h3>
+                <p>Descripción detallada de la peticion familiar.</p>
+                <img src="#" alt="Imagen de referencia">
+            </div>
+        </div>
+        <div id="proceso20" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleModal('proceso20')">&times;</span>
+                <h3>Peticion Familiar</h3>
+                <p>Se refiere a un proceso legal mediante el cual un ciudadano o residente legal de un país solicita que
+                    un miembro de su familia extranjera sea admitido en el país y obtenga un estatus legal, ya sea
+                    temporal o permanente. Este proceso permite la reunificación de familias al permitir que parientes
+                    cercanos se unan a quienes ya residen en el país.</p>
+                <img src="#" alt="Imagen de referencia">
+            </div>
+        </div>
+    </section>
+    <!--RELLENO-->
+    <section class="relleno">
+        <h1>¿Aun no tienes tu VISA?</h1>
+        <p>Ve a <a href="PAGINAS/NuestrasOficinas.html">Nuestras Oficinas</a> y solicita la tuya</p>
+    </section>
+    <!--PROCESO DE TRABAJO-->
+    <section class="proceso-trabajo">
+        <div class="proceso-container">
+            <h2>Nuestro Proceso de Trabajo</h2>
+            <p>En ERS VISA, estamos comprometidos a brindar un servicio de asesoría migratoria de calidad. Nuestro
+                proceso simplificado te guía de manera efectiva a través de los siguientes pasos:</p>
+            <div class="pasos">
+                <div class="paso">
+                    <div class="paso-numero">1</div>
+                    <h3>Consulta Inicial</h3>
+                    <p>Comenzamos con una consulta personalizada para entender tus objetivos y necesidades migratorias.
+                    </p>
+                </div>
+                <div class="paso">
+                    <div class="paso-numero">2</div>
+                    <h3>Documentación</h3>
+                    <p>Te asistimos en la recopilación y preparación de la documentación necesaria.</p>
+                </div>
+                <div class="paso">
+                    <div class="paso-numero">3</div>
+                    <h3>Asesoramiento Personalizado</h3>
+                    <p>Brindamos asesoramiento adaptado a tu situación para tomar decisiones informadas.</p>
+                </div>
+                <div class="paso">
+                    <div class="paso-numero">4</div>
+                    <h3>Trámites y Presentación</h3>
+                    <p>Realizamos los trámites requeridos y presentamos tus solicitudes con precisión.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Relleno -->
+    <section class="relleno">
+        <h1>¿Qué esperas para pedir tu asesoría?</h1>
+        <br>
+        <a href="https://wa.link/uropst" class="btn-ir-contacto" target="_blank">Contáctanos</a>
+    </section>
+    <!--MISION, VISION Y VALORES-->
+    <section class="mision-vision-valores">
+        <div class="card azul">
+            <h3>Misión</h3>
+            <p>Proporcionar asesoría migratoria de alta calidad para ayudar a las personas a alcanzar sus objetivos de
+                inmigración de manera efectiva y confiable.</p>
+        </div>
+        <div class="card">
+            <h3>Visión</h3>
+            <p>Convertirnos en el referente líder en asesoría migratoria, reconocido por nuestra excelencia y compromiso
+                con los clientes.</p>
+        </div>
+        <div class="card rojo">
+            <h3>Valores</h3>
+            <ul>
+                <li>Integridad</li>
+                <li>Profesionalismo</li>
+                <li>Empatía</li>
+                <li>Compromiso</li>
+            </ul>
+        </div>
+    </section>
+    <br>
+    <!--CIERRE-->
+    <section class="seccion-cierre">
+        <div class="contenedor">
+            <h2>¡Gracias por visitarnos!</h2>
+            <p>En ERSVISA, nos enorgullece brindar asesoría de alta calidad y un compromiso inquebrantable con nuestros
+                clientes. Siempre estamos enfocados en ser profesionales y estamos emocionados de compartir nuestra
+                pasión contigo. Si tienes alguna duda sobre nosotros o deseas obtener más información, no dudes en
+                visitar <a href="PAGINAS/NuestrasOficinas.html">Nuestras Oficinas</a> o ver nuestro <a
+                    href="PAGINAS/Equipo.html">Equipo</a>. ¡Esperamos verte pronto!</p>
+        </div>
+    </section>
+    <!--PIE DE PAGINA-->
+    <footer>
+        <div class="redes-sociales">
+            <a href="https://www.facebook.com/ersvisa/" target="_blank"><i class="fab fa-facebook-f fa-lg"
+                    style="color: #f5f5f5;"></i></a>
+            <a href="https://www.instagram.com/ersvisa_abogados_migratorios/" target="_blank"><i
+                    class="fab fa-instagram fa-lg" style="color: #f5f5f5;"></i></a>
+        </div>
+        <div class="contacto">
+            <p>Contacto: <a href="mailto:ersvisa@gmail.com">ersvisa@gmail.com</a></p>
+            <p>Asesor Edward: <a href="https://wa.link/uropst" target="_blank">+1 809-397-5678</a></p>
+            <p>Asesora Alexandra: <a href="https://wa.link/rfbh0i" target="_blank">+1 829-586-9452</a></p>
+        </div>
+        <p class="derechos">&copy; 2023 ERS VISA. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="JS/JavaScript.js"></script>
+    <script src="banner.js"></script>
+    
+</body>
+
+</html>
