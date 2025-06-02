@@ -1,0 +1,155 @@
+:root {
+    --primary-color: #011063;
+    --primary-color-light: rgb(43, 76, 148);
+    --secondary-color: #ca0101;
+    --secondary-color-light: #e60000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background: #f8f9fa;
+    transition: opacity 0.3s ease-in-out; /* Agregar una transición suave a toda la página */
+    color: var(--primary-color);
+}
+
+
+
+hr {
+    margin: 0 auto;
+    background-color: transparent;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    max-width: 60%;
+    opacity: 20%;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar .logo {
+    font-family: "Russo One", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-weight: 100;
+    font-size: 1.7rem;
+}
+
+.navbar .logo span {
+    color: var(--secondary-color);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 700;
+    transition: color 0.5s ease;
+}
+
+.navbar a:hover {
+    color: var(--secondary-color);
+}
+
+.btn-date-navbar {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-date-navbar:hover {
+    background-color: var(--secondary-color-light);
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.redes-sociales {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.redes-sociales a {
+    display: inline-block;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.contacto {
+    margin-bottom: 15px;
+}
+
+.contacto a {
+    color: #ffffff;
+}
+
+.derechos {
+    font-size: 14px;
+}
+
+/* -- ADAPTACION A MOVIL -- */
+
+@media (max-width:768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+/* -- ANIMACIONES -- */
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Opcional: Añadir desplazamiento vertical */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nuestras-oficinas,
+.ubicacion,
+.mapa,
+.presentacion-equipo,
+.presentacion-contenido,
+.mision-vision-valores .card {
+    opacity: 0; /* Inicialmente oculto */
+    animation: fade-in 1s ease-in-out forwards; /* Aplicar animación */
+    animation-delay: 0.1s;
+}
+
+/* Retrasar la aparición de cada tarjeta en la sección Mision, Visión y Valores */
+.mision-vision-valores .card:nth-child(1) { animation-delay: 0.2s; }
+.mision-vision-valores .card:nth-child(2) { animation-delay: 0.4s; }
+.mision-vision-valores .card:nth-child(3) { animation-delay: 0.6s; }

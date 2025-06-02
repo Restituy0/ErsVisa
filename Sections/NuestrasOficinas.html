@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Css/main.Css">
+    <link rel="icon" type="image/png" href="../Img/Logo-ErsVisa-Original.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/Css/all.min.Css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/Css2?family=Russo+One&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f66f1c652f.js" crossorigin="anonymous"></script>
+    <title>Nuestras Oficinas - ErsVisa</title>
+    <style>
+        /* Font Russo One */
+        @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+        
+        /*  - Oficina - */
+        .nuestras-oficinas {
+            padding: 60px;
+            text-align: center;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .nuestras-oficinas h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #003366;
+        }
+
+        .ubicacion {
+            display: flex;
+            align-items: center;
+            /* Centra verticalmente los elementos */
+            margin-bottom: 40px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .tarjeta-ubicacion {
+            flex: 1;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: left;
+            /* Alinea el contenido a la izquierda */
+        }
+
+        .tarjeta-ubicacion h3 {
+            margin-top: 0;
+            color: #003366;
+        }
+
+        .tarjeta-ubicacion p {
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .mapa {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            /* Espacio alrededor del mapa */
+            background-color: #f3f3f3;
+            /* Fondo del mapa */
+        }
+
+        .mapa-iframe {
+            width: 100%;
+            /* Asegura que el iframe ocupe todo el ancho */
+            max-width: 400px;
+            /* Limita el ancho máximo del mapa */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .mapa-iframe iframe {
+            width: 100%;
+            height: 240px;
+            border: none;
+        }
+
+        /* Section: Close */
+        .seccion-cierre-oficinas {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid #ffffff;
+        }
+
+        .seccion-cierre-oficinas h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .seccion-cierre-oficinas p {
+            font-size: 20px;
+            font-weight: 200;
+            margin-bottom: 30px;
+        }
+
+        .btn-ir-contacto {
+            background-color: #ffffff;
+            color: #003366;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            text-decoration: none;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        .btn-ir-contacto:hover {
+            background-color: #b41b1b;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">ERS<span>VISA</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="#">Oficinas</a></li>
+                <li><a href="Equipo.html">Nosotros</a></li>
+                <li><a href="#" class="btn-date-navbar" style="color: #fff;">Agendar Cita</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Location -->
+    <section class="nuestras-oficinas">
+        <h2>Nuestras Oficinas</h2>
+        <p>Visitalas para disfrutar de nuestros servicios</p>
+
+        <div class="ubicacion">
+            <div class="tarjeta-ubicacion">
+                <h3>Oficina Principal</h3>
+                <br>
+                <p>Dirección: Av. República de Colombia 57, Santo Domingo</p>
+                <p>Teléfono: +809 793 6679</p>
+            </div>
+            <div class="mapa">
+                <div class="mapa-iframe">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.8204866496762!2d-69.96039584802868!3d18.49579639564777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf8b25b6a93719%3A0x368bde5cb037e3e5!2sConsulado%20Americano!5e0!3m2!1ses-419!2sdo!4v1692668719602!5m2!1ses-419!2sdo"
+                        frameborder="0" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="ubicacion">
+            <div class="tarjeta-ubicacion">
+                <h3>Sucursal 1</h3>
+                <br>
+                <p>Dirección: Av. Republica de Colombia cerca de la Embajada de los Estados Unidos, 10505</p>
+                <p>Teléfono: +809 549 6513</p>
+            </div>
+            <div class="mapa">
+                <div class="mapa-iframe">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.4489287892357!2d-69.96528422518179!3d18.508604482582605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf8b0ae835d7f1%3A0x5733d4cd385e65de!2sEstacionamiento%20Sombra%20%231!5e0!3m2!1ses-419!2sdo!4v1692668042793!5m2!1ses-419!2sdo"
+                        frameborder="0" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="ubicacion">
+            <div class="tarjeta-ubicacion">
+                <h3>Sucursal 2</h3>
+                <br>
+                <p>Dirección: Av. República de Colombia Cerca de la Embajada de los Estados Unidos, 10505</p>
+                <p>Teléfono: +000 000 000</p>
+            </div>
+            <div class="mapa">
+                <div class="mapa-iframe">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d795.374180032535!2d-69.96272121635353!3d18.508169874736062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf8b264a02c6ab%3A0xf5d500165359f90f!2sEstacionamiento%20Sombra%20%232!5e0!3m2!1ses-419!2sdo!4v1692668673863!5m2!1ses-419!2sdo"
+                        frameborder="0" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Close -->
+    <section class="seccion-cierre-oficinas">
+        <div class="contenedor">
+            <h2>¿Listo para visitarnos?</h2>
+            <p>¡Esperamos verte pronto en nuestras oficinas! Explora nuestro entorno de trabajo colaborativo y descubre
+                cómo podemos ayudarte a lograr tus objetivos.</p>
+            <a href="https://wa.link/uropst" class="btn-ir-contacto">Contáctanos</a>
+        </div>
+    </section>
+    <!--Footer-->
+    <footer>
+        <div class="redes-sociales">
+            <a href="https://www.facebook.com/ersvisa/" target="_blank"><i class="fab fa-facebook-f fa-lg"
+                    style="color: #f5f5f5;"></i></a>
+            <a href="https://www.instagram.com/ersvisa_abogados_migratorios/" target="_blank"><i
+                    class="fab fa-instagram fa-lg" style="color: #f5f5f5;"></i></a>
+        </div>
+        <div class="contacto">
+            <p>Contacto: <a href="mailto:ersvisa@gmail.com">ersvisa@gmail.com</a></p>
+            <p>Asesor Edward: <a href="https://wa.link/uropst" target="_blank">+1 809-397-5678</a></p>
+            <p>Asesora Alexandra: <a href="https://wa.link/rfbh0i" target="_blank">+1 829-586-9452</a></p>
+        </div>
+        <p class="derechos">&copy; 2023 ERS VISA. Todos los derechos reservados.</p>
+    </footer>
+    <script src="../JS/JavaScript.js"></script>
+</body>
+
+</html>

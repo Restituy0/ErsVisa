@@ -2,378 +2,641 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/Estilo.css">
-    <link rel="icon" type="image/png" href="IMG/Logo-ErsVisa-Original.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>ERS VISA</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ErsVisa - Asesoria y Gestión Migratoria</title>
+    <link rel="stylesheet" href="Css/main.Css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/Css2?family=Russo+One&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f66f1c652f.js" crossorigin="anonymous"></script>
+    <style>               
+        /* Font Russo One */
+        @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+        
+        /* -- Inicio -- */
+
+        /*Section: Introduction*/
+        .introduction-carousel {
+            position: relative;
+            height: 600px;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .introduction-carousel .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .introduction-carousel h1 {
+            text-align: center;
+            font-size: 4rem;
+            font-weight: 500;
+        }
+
+        .introduction-carousel p {
+            margin-bottom: 1rem;
+        }
+
+        .btn-primary {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            background: var(--secondary-color);
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            width: fit-content;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-color-light);
+        }
+
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .carousel-dots button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            background-color: var(--primary-color);
+            /* Azul inactivo */
+            opacity: 0.7;
+            cursor: pointer;
+            transition: background-color 1s ease, transform 0.2s;
+        }
+
+        .carousel-dots button.active {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            background-color: var(--secondary-color);
+            /* Rojo activo */
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+
+        /* Section: About */
+        .about {
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .about .ver-mas {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #1e2a44;
+            text-decoration: underline;
+        }
+
+        /* Section: Tabs y Servicios */
+        .services {
+            padding: 2rem;
+            background: #f8f9fa;
+        }
+
+        .services h1 {
+            text-align: center;
+            font-weight: 500;
+            font-size: 2rem;
+        }
+
+        .services p {
+            color: #333;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            width: fit-content;
+            height: fit-content;
+            margin-bottom: 2rem;
+            border-radius: 0.2rem;
+            border: 1px solid #d3d3d3;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+
+        .tab {
+            padding: 0.5rem 1rem;
+            border: none;
+            background: #fff;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .tab.active {
+            border: none;
+            border-radius: 0.2rem;
+            background: #e60000;
+            color: #fff;
+        }
+
+        .card-container {
+            perspective: 1000px;
+            width: 15rem;
+            height: 12rem;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            text-align: center;
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .cards.fade-out {
+            opacity: 0;
+        }
+
+        .card.flip-card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s ease;
+            border-radius: 12px;
+        }
+
+        .card.flip-card:hover {
+            transform: rotateY(180deg);
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-front {
+            background: #fff;
+            color: var(--primary-color);
+        }
+
+        .card-back {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            background: var(--primary-color);
+            color: #fff;
+            transform: rotateY(180deg);
+            text-align: center;
+        }
+
+        .card-back p {
+            color: #fff;
+        }
+
+        .card i {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .hint {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 0.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.4;
+                transform: translateY(0);
+            }
+
+            50% {
+                opacity: 1;
+                transform: translateY(-3px);
+            }
+
+            100% {
+                opacity: 0.4;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section: Working Process */
+        .proceso-trabajo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        .proceso-trabajo h2 {
+            font-size: 28px;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .proceso-trabajo p {
+            font-size: 18px;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .pasos {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .pasos i {
+            display: flex;
+            align-items: center;
+            font-size: 50px;
+        }
+
+        .paso {
+            min-width: 15rem;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .paso-numero {
+            font-size: 15px;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .paso h3 {
+            font-size: 25px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .paso p {
+            font-size: 16px;
+            color: #555;
+            text-align: center;
+        }
+
+        /* Call To Action */
+        .cta-modern {
+            position: relative;
+            background-image: url('Img/visado.webp');
+            /* Cambia a tu ruta */
+            background-size: cover;
+            background-position: center;
+            /* background-attachment: fixed; */
+            height: 27rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            overflow: hidden;
+        }
+
+        .cta-modern::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.3);
+            /* Oscurece la imagen */
+            z-index: 1;
+        }
+
+        .cta-content {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            z-index: 2;
+            background: var(--primary-color);
+            padding: 2rem;
+            min-width: 50rem;
+            max-height: 6.5rem;
+            color: #fff;
+            border-radius: 0 10rem 10rem 0;
+            /*clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);*/
+            margin-left: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-content h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+
+        .btn-secondary {
+            position: absolute;
+            right: 0;
+            margin-right: 30px;
+            margin-top: -12px;
+            text-align: center;
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 0.9rem;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            animation: scale 2s infinite;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary-color-light);
+        }
+
+        @keyframes scale {
+            0% {
+                background-color: var(--primary-color);
+            }
+
+            50% {
+                background-color: var(--secondary-color);
+                transform: scale(1.2, 1.2);
+            }
+
+            100% {
+                background-color: var(--primary-color);
+            }
+        }
+
+        /* Section: Close */
+        .seccion-cierre-oficinas {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid #ffffff;
+        }
+
+        .seccion-cierre-oficinas h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .seccion-cierre-oficinas p {
+            font-size: 20px;
+            font-weight: 200;
+            margin-bottom: 30px;
+        }
+
+        .btn-ir-contacto {
+            background-color: #ffffff;
+            color: #003366;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            text-decoration: none;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        .btn-ir-contacto:hover {
+            background-color: #b41b1b;
+            color: #ffffff;
+        }
+
+
+        /* Responsive */
+        @media (max-width: 768px) {
+
+            .introduction-carousel h1 {
+                font-weight: bold;
+                font-size: 2rem;
+            }
+
+            .introduction-carousel p {
+                font-size: 1rem;
+                color: #d3d3d3;
+            }
+
+            .tabs {
+                flex-direction: column;
+            }
+
+            .tab.active {
+                border-radius: 0.1rem;
+            }
+
+            .cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pasos {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pasos i {
+                transform: rotate(90deg);
+            }
+
+            .cta-modern {
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .cta-content {
+                clip-path: none;
+                width: 90%;
+                margin: 0 auto;
+                border-radius: 10rem;
+                min-width: 10rem;
+                text-align: center;
+            }
+
+            .cta-content h2 {
+                font-size: 0.9rem;
+            }
+
+            .btn-secondary {
+                background-color: transparent;
+                margin-right: 0px;
+                margin-top: -18px;
+                text-align: center;
+                transform: scale(0.7, 0.7);
+                transform: rotate(250deg);
+            }
+
+            @keyframes scale {
+            0% {
+                background-color: transparent;
+            }
+
+            50% {
+                background-color: transparent;
+            }
+
+            100% {
+                background-color: transparent;
+            }
+        }
+
+        }
+    </style>
 </head>
 
 <body>
-    <!--MENU-->
-    <nav class="menu">
-        <div class="logo">
-            <img src="IMG/ErsVisa.jpg" alt="Logo de la empresa">
-            <!--<h1 style="color: #003366; font-family: Arial, sans-serif;">ERSVISA</h1>-->
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">ERS<span>VISA</span>
         </div>
-        <ul class="menu-list">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="PAGINAS/NuestrasOficinas.html">Nuestras Oficinas</a></li>
-            <li><a href="PAGINAS/Equipo.html">Sobre Nosotros</a></li>
-        </ul>
-    </nav>
-    <!-- Sección de Bienvenida con Banner -->
-    <section class="banner">
-        <div class="slider">
-            <div class="slide active" style="background-image: url('IMG/PeticionFamiliar.jpg');">
-                <div class="caption">
-                    <h2>Bienvenido a ERSVISA</h2>
-                    <p>Explora nuestros servicios de inmigración y legalización</p>
-                </div>
-            </div>
-            <div class="slide" style="background-image: url('IMG/CitaConsular.jpg');">
-                <div class="caption">
-                    <h2>Nuestros Servicios</h2>
-                    <p>Ofrecemos asesoramiento legal experto en inmigración</p>
-                </div>
-            </div>
-            <div class="slide" style="background-image: url('IMG/ProcesoVisa.png');">
-                <div class="caption">
-                    <h2>Resultados Comprobados</h2>
-                    <p>Más de 1000 clientes satisfechos</p>
-                </div>
-            </div>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="Sections/NuestrasOficinas.html">Oficinas</a></li>
+                <li><a href="Sections/Equipo.html">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Introduction Carrusel -->
+    <section class="introduction-carousel">
+        <div class="overlay">
+            <h1>Gestión y asesoría migratoria a todos los países</h1>
+            <p>Ofrecemos apoyo legal para trámites de inmigración</p>
+            <a href="#" class="btn-primary">Agenda tu cita</a>
         </div>
-        <div class="controls">
-            <div class="prev">&#10094;</div>
-            <div class="next">&#10095;</div>
+
+        <div class="carousel-dots" id="carousel-dots">
+            <!-- Los puntitos se generan desde JS -->
         </div>
     </section>
 
-    <!--PROCESOS-->
-    <div class="encabezado-procesos">
-        <h2>¿Que hacemos?</h2>
+    <!-- About Us -->
+    <section class="about">
+        <h2>Quiénes Somos</h2>
+        <p>
+            Somos una firma legal especializada en procesos migratorios, dedicada a ayudar a nuestros clientes a navegar
+            el complejo camino hacia una nueva vida en el extranjero.
+        </p>
+        <a href="#" class="ver-mas">Ver más</a>
+    </section>
+
+    <hr>
+
+    <section class="services">
+        <h1>¿Qué hacemos?</h1>
         <p>Descubre los procesos con los que trabajamos</p>
-    </div>
-    <section class="procesos">
-        <div class="overlay" id="overlay" onclick="toggleModal('proceso1')"></div>
-        <div class="process-card destacado" onclick="toggleModal('proceso1')">
-            <h3>Proceso de Visa</h3>
+        <div class="tabs">
+            <button class="tab active" data-tab="visas">Visas</button>
+            <button class="tab" data-tab="legalizacion">Legalización</button>
+            <button class="tab" data-tab="notarizacion">Notarización</button>
+            <button class="tab" data-tab="consultas">Consultas</button>
         </div>
-        <div class="process-card" onclick="toggleModal('proceso2')">
-            <h3>Peticion Familiar</h3>
+        <div class="cards" id="cards-container">
+            <!-- Se llenará dinámicamente -->
         </div>
-        <div class="process-card" onclick="toggleModal('proceso3')">
-            <h3>Visa de Novio</h3>
-        </div>
-        <div class="process-card destacado" onclick="toggleModal('proceso4')">
-            <h3>Citas Consulares</h3>
-        </div>
-        <div class="process-card" onclick="toggleModal('proceso5')">
-            <h3>Carta de Ruta</h3>
-        </div>
-        <div class="process-card" onclick="toggleModal('proceso6')">
-            <h3>Notarizaciones</h3>
-        </div>
-        <div class="process-card destacado" onclick="toggleModal('proceso7')">
-            <h3>Perdon/Waiver</h3>
-        </div>
-        <div class="process-card" onclick="toggleModal('proceso8')">
-            <h3>Casos Especiales</h3>
-        </div>
-        <div class="process-card" onclick="toggleModal('proceso9')">
-            <h3>Adopciones</h3>
-        </div>
-        <div class="process-card" onclick="toggleModal('proceso10')">
-            <h3>Matrimonios</h3>
-        </div>
-        <div class="process-card" onclick="toggleModal('proceso11')">
-            <h3>Certificaciones Penales</h3>
-        </div>
-        <div class="process-card destacado" onclick="toggleModal('proceso12')">
-            <h3>Pasaporte Americano</h3>
-        </div>
-        <div class="process-card" onclick="toggleModal('proceso13')">
-            <h3>Seguro Social</h3>
-        </div>
-        <div class="process-card destacado" onclick="toggleModal('proceso14')">
-            <h3>Traducciones</h3>
-        </div>
-        <div class="process-card" onclick="toggleModal('proceso15')">
-            <h3>Apostille de Actas</h3>
-        </div>
-        <div class="process-card" onclick="toggleModal('proceso16')">
-            <h3>Declaracion Nacimiento</h3>
-        </div>
-        <div class="process-card destacado" onclick="toggleModal('proceso17')">
-            <h3>Permiso de Menores</h3>
-        </div>
-        <div class="process-card" onclick="toggleModal('proceso18')">
-            <h3>Pago Residencia</h3>
-        </div>
-        <div class="process-card" onclick="toggleModal('proceso19')">
-            <h3>VISA EUROPEA</h3>
-        </div>
-        <div class="process-card" onclick="toggleModal('proceso20')">
-            <h3>Divorcios / Legales</h3>
-        </div>
+    </section>
 
-        <!-- Modal para Proceso de Visa -->
-        <div id="proceso1" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="toggleModal('proceso1')">&times;</span>
-                <h3>Proceso de Visa</h3>
-                <p>Se refiere a las acciones y pasos que una persona debe seguir para obtener el permiso legal necesario
-                    para ingresar a un país extranjero por un período determinado.</p>
-                <img src="IMG/ProcesoVisa.png" alt="Imagen de referencia">
-            </div>
-        </div>
-        <div id="proceso2" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="toggleModal('proceso2')">&times;</span>
-                <h3>Peticion Familiar</h3>
-                <p>Es un proceso legal mediante el cual un ciudadano o residente legal de un país solicita la entrada
-                    y/o el estatus migratorio para un miembro de su familia, generalmente un cónyuge, hijo, padre u otro
-                    pariente cercano. Este proceso permite que los ciudadanos y residentes legales puedan reunirse con
-                    sus familiares en el país de acogida y les brinda la oportunidad de vivir juntos y establecer sus
-                    vidas en ese lugar.</p>
-                <img src="IMG/PeticionFamiliar.jpg" alt="Imagen de referencia">
-            </div>
-        </div>
-        <div id="proceso3" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="toggleModal('proceso3')">&times;</span>
-                <h3>Visa de Novio</h3>
-                <p>Es un tipo de visa que permite que un ciudadano o residente legal de un país traiga a su prometido(a)
-                    extranjero(a) al país para casarse y establecer su vida juntos. Esta visa está diseñada para parejas
-                    que planean casarse y vivir en el mismo país después del matrimonio.</p>
-                <img src="IMG/visanovios.jpg" alt="Imagen de referencia">
-            </div>
-        </div>
-        <div id="proceso4" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="toggleModal('proceso4')">&times;</span>
-                <h3>Citas Consulares</h3>
-                <p>Son reuniones o encuentros programados entre ciudadanos extranjeros y representantes consulares en
-                    una embajada o consulado. Estas citas se realizan para llevar a cabo diversos trámites y servicios
-                    relacionados con asuntos consulares, como solicitudes de visas, pasaportes, servicios notariales y
-                    otros servicios consulares que requieren interacción personal.</p>
-                <img src="IMG/CitaConsular.jpg" alt="Imagen de referencia">
-            </div>
-        </div>
-        <div id="proceso5" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="toggleModal('proceso5')">&times;</span>
-                <h3>Carta de Ruta</h3>
-                <p>Se refiere a un documento que detalla la planificación y la ruta específica que seguirá una aeronave,
-                    embarcación u otro vehículo durante su viaje. Esta carta incluye información detallada sobre los
-                    puntos de inicio y llegada, los puntos intermedios, las altitudes de vuelo, las velocidades, las
-                    frecuencias de radio, las restricciones del espacio aéreo y otros detalles relacionados con la
-                    navegación y la seguridad del viaje.</p>
-                <img src="IMG/CartaRuta.jpg" alt="Imagen de referencia">
-            </div>
-        </div>
-        <div id="proceso6" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="toggleModal('proceso6')">&times;</span>
-                <h3>Peticion Familiar</h3>
-                <p>Descripción detallada de la peticion familiar.</p>
-                <img src="#" alt="Imagen de referencia">
-            </div>
-        </div>
-        <div id="proceso7" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="toggleModal('proceso7')">&times;</span>
-                <h3>Peticion Familiar</h3>
-                <p>Descripción detallada de la peticion familiar.</p>
-                <img src="#" alt="Imagen de referencia">
-            </div>
-        </div>
-        <div id="proceso8" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="toggleModal('proceso8')">&times;</span>
-                <h3>Peticion Familiar</h3>
-                <p>Descripción detallada de la peticion familiar.</p>
-                <img src="#" alt="Imagen de referencia">
-            </div>
-        </div>
-        <div id="proceso9" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="toggleModal('proceso9')">&times;</span>
-                <h3>Peticion Familiar</h3>
-                <p>Descripción detallada de la peticion familiar.</p>
-                <img src="#" alt="Imagen de referencia">
-            </div>
-        </div>
-        <div id="proceso10" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="toggleModal('proceso10')">&times;</span>
-                <h3>Peticion Familiar</h3>
-                <p>Descripción detallada de la peticion familiar.</p>
-                <img src="#" alt="Imagen de referencia">
-            </div>
-        </div>
-        <div id="proceso11" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="toggleModal('proceso11')">&times;</span>
-                <h3>Peticion Familiar</h3>
-                <p>Descripción detallada de la peticion familiar.</p>
-                <img src="#" alt="Imagen de referencia">
-            </div>
-        </div>
-        <div id="proceso12" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="toggleModal('proceso12')">&times;</span>
-                <h3>Peticion Familiar</h3>
-                <p>Descripción detallada de la peticion familiar.</p>
-                <img src="#" alt="Imagen de referencia">
-            </div>
-        </div>
-        <div id="proceso13" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="toggleModal('proceso13')">&times;</span>
-                <h3>Peticion Familiar</h3>
-                <p>Descripción detallada de la peticion familiar.</p>
-                <img src="#" alt="Imagen de referencia">
-            </div>
-        </div>
-        <div id="proceso14" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="toggleModal('proceso14')">&times;</span>
-                <h3>Peticion Familiar</h3>
-                <p>Descripción detallada de la peticion familiar.</p>
-                <img src="#" alt="Imagen de referencia">
-            </div>
-        </div>
-        <div id="proceso15" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="toggleModal('proceso15')">&times;</span>
-                <h3>Peticion Familiar</h3>
-                <p>Descripción detallada de la peticion familiar.</p>
-                <img src="#" alt="Imagen de referencia">
-            </div>
-        </div>
-        <div id="proceso16" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="toggleModal('proceso16')">&times;</span>
-                <h3>Peticion Familiar</h3>
-                <p>Descripción detallada de la peticion familiar.</p>
-                <img src="#" alt="Imagen de referencia">
-            </div>
-        </div>
-        <div id="proceso17" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="toggleModal('proceso17')">&times;</span>
-                <h3>Peticion Familiar</h3>
-                <p>Descripción detallada de la peticion familiar.</p>
-                <img src="#" alt="Imagen de referencia">
-            </div>
-        </div>
-        <div id="proceso18" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="toggleModal('proceso18')">&times;</span>
-                <h3>Peticion Familiar</h3>
-                <p>Descripción detallada de la peticion familiar.</p>
-                <img src="#" alt="Imagen de referencia">
-            </div>
-        </div>
-        <div id="proceso19" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="toggleModal('proceso19')">&times;</span>
-                <h3>Peticion Familiar</h3>
-                <p>Descripción detallada de la peticion familiar.</p>
-                <img src="#" alt="Imagen de referencia">
-            </div>
-        </div>
-        <div id="proceso20" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="toggleModal('proceso20')">&times;</span>
-                <h3>Peticion Familiar</h3>
-                <p>Se refiere a un proceso legal mediante el cual un ciudadano o residente legal de un país solicita que
-                    un miembro de su familia extranjera sea admitido en el país y obtenga un estatus legal, ya sea
-                    temporal o permanente. Este proceso permite la reunificación de familias al permitir que parientes
-                    cercanos se unan a quienes ya residen en el país.</p>
-                <img src="#" alt="Imagen de referencia">
-            </div>
-        </div>
-    </section>
-    <!--RELLENO-->
-    <section class="relleno">
-        <h1>¿Aun no tienes tu VISA?</h1>
-        <p>Ve a <a href="PAGINAS/NuestrasOficinas.html">Nuestras Oficinas</a> y solicita la tuya</p>
-    </section>
+    <hr>
+
     <!--PROCESO DE TRABAJO-->
     <section class="proceso-trabajo">
-        <div class="proceso-container">
-            <h2>Nuestro Proceso de Trabajo</h2>
-            <p>En ERS VISA, estamos comprometidos a brindar un servicio de asesoría migratoria de calidad. Nuestro
-                proceso simplificado te guía de manera efectiva a través de los siguientes pasos:</p>
-            <div class="pasos">
-                <div class="paso">
-                    <div class="paso-numero">1</div>
-                    <h3>Consulta Inicial</h3>
-                    <p>Comenzamos con una consulta personalizada para entender tus objetivos y necesidades migratorias.
-                    </p>
-                </div>
-                <div class="paso">
-                    <div class="paso-numero">2</div>
-                    <h3>Documentación</h3>
-                    <p>Te asistimos en la recopilación y preparación de la documentación necesaria.</p>
-                </div>
-                <div class="paso">
-                    <div class="paso-numero">3</div>
-                    <h3>Asesoramiento Personalizado</h3>
-                    <p>Brindamos asesoramiento adaptado a tu situación para tomar decisiones informadas.</p>
-                </div>
-                <div class="paso">
-                    <div class="paso-numero">4</div>
-                    <h3>Trámites y Presentación</h3>
-                    <p>Realizamos los trámites requeridos y presentamos tus solicitudes con precisión.</p>
-                </div>
+        <h2>¿Como lo hacemos?</h2>
+        <p>Nuestro proceso simplificado te guía de manera efectiva a través de los siguientes pasos:</p>
+        <div class="pasos">
+            <div class="paso">
+                <div class="paso-numero">PASO 1</div>
+                <h3>Consulta Inicial</h3>
+                <p>Comenzamos con una consulta personalizada para entender tus objetivos y necesidades migratorias.
+                </p>
+            </div>
+            <i class="fa-solid fa-shoe-prints"></i>
+            <div class="paso">
+                <div class="paso-numero">PASO 2</div>
+                <h3>Documentación</h3>
+                <p>Te asistimos en la recopilación y preparación de la documentación necesaria.</p>
+            </div>
+            <i class="fa-solid fa-shoe-prints"></i>
+            <div class="paso">
+                <div class="paso-numero">PASO 3</div>
+                <h3>Asesoramiento Personalizado</h3>
+                <p>Brindamos asesoramiento adaptado a tu situación para tomar decisiones informadas.</p>
+            </div>
+            <i class="fa-solid fa-shoe-prints"></i>
+            <div class="paso">
+                <div class="paso-numero">PASO 4</div>
+                <h3>Trámites y Presentación</h3>
+                <p>Realizamos los trámites requeridos y presentamos tus solicitudes con precisión.</p>
             </div>
         </div>
     </section>
-    <!-- Relleno -->
-    <section class="relleno">
-        <h1>¿Qué esperas para pedir tu asesoría?</h1>
-        <br>
-        <a href="https://wa.link/uropst" class="btn-ir-contacto" target="_blank">Contáctanos</a>
-    </section>
-    <!--MISION, VISION Y VALORES-->
-    <section class="mision-vision-valores">
-        <div class="card azul">
-            <h3>Misión</h3>
-            <p>Proporcionar asesoría migratoria de alta calidad para ayudar a las personas a alcanzar sus objetivos de
-                inmigración de manera efectiva y confiable.</p>
-        </div>
-        <div class="card">
-            <h3>Visión</h3>
-            <p>Convertirnos en el referente líder en asesoría migratoria, reconocido por nuestra excelencia y compromiso
-                con los clientes.</p>
-        </div>
-        <div class="card rojo">
-            <h3>Valores</h3>
-            <ul>
-                <li>Integridad</li>
-                <li>Profesionalismo</li>
-                <li>Empatía</li>
-                <li>Compromiso</li>
-            </ul>
+
+    <!-- Llamada a la accion -->
+    <section class="cta-modern">
+        <div class="cta-content">
+            <h2>¿Qué esperas para pedir tu asesoría?</h2>
+            <a href="https://wa.link/uropst" class="btn-secondary" target="_blank"><i class="fa-solid fa-phone"
+                    style="color: #ffffff; font-size: 2rem;"></i></a>
         </div>
     </section>
-    <br>
-    <!--CIERRE-->
-    <section class="seccion-cierre">
+
+    <!-- Sección de Cierre -->
+    <section class="seccion-cierre-oficinas">
         <div class="contenedor">
-            <h2>¡Gracias por visitarnos!</h2>
-            <p>En ERSVISA, nos enorgullece brindar asesoría de alta calidad y un compromiso inquebrantable con nuestros
-                clientes. Siempre estamos enfocados en ser profesionales y estamos emocionados de compartir nuestra
-                pasión contigo. Si tienes alguna duda sobre nosotros o deseas obtener más información, no dudes en
-                visitar <a href="PAGINAS/NuestrasOficinas.html">Nuestras Oficinas</a> o ver nuestro <a
-                    href="PAGINAS/Equipo.html">Equipo</a>. ¡Esperamos verte pronto!</p>
+            <h2>¿Listo para visitarnos?</h2>
+            <p>¡Esperamos verte pronto en nuestras oficinas! Explora nuestro entorno de trabajo colaborativo y descubre
+                cómo podemos ayudarte a lograr tus objetivos.</p>
+            <a href="Sections/NuestrasOficinas.html" class="btn-ir-contacto">Oficinas</a>
         </div>
     </section>
+
     <!--PIE DE PAGINA-->
     <footer>
         <div class="redes-sociales">
@@ -387,12 +650,129 @@
             <p>Asesor Edward: <a href="https://wa.link/uropst" target="_blank">+1 809-397-5678</a></p>
             <p>Asesora Alexandra: <a href="https://wa.link/rfbh0i" target="_blank">+1 829-586-9452</a></p>
         </div>
-        <p class="derechos">&copy; 2023 ERS VISA. Todos los derechos reservados.</p>
+        <p class="derechos">&copy; ErsVisa. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="JS/JavaScript.js"></script>
-    <script src="banner.js"></script>
-    
+    <!-- Flip Cards -->
+    <script>
+        const cardData = {
+            visas: [
+                { icon: 'fa-solid fa-passport', title: 'Proceso de Visa', description: 'Te ayudamos con todo el proceso de solicitud.' },
+                { icon: 'fa-regular fa-gem', title: 'Visa de Novio', description: 'Unimos corazones en el marco legal adecuado.' },
+                { icon: 'fa-solid fa-file-circle-check', title: 'Perdón (Waiver)', description: 'Asistencia legal para casos de inadmisibilidad.' }
+            ],
+            legalizacion: [
+                { icon: 'fa-solid fa-file-signature', title: 'Documentos Legales' },
+                { icon: 'fa-solid fa-stamp', title: 'Certificaciones Apostilladas' },
+                { icon: 'fa-solid fa-globe', title: 'Traducciones Juradas' }
+            ],
+            notarizacion: [
+                { icon: 'fa-solid fa-pen-fancy', title: 'Notarización de Documentos' },
+                { icon: 'fa-solid fa-file-shield', title: 'Declaraciones Juradas' },
+                { icon: 'fa-solid fa-id-card', title: 'Poderes Notariales' }
+            ],
+            consultas: [
+                { icon: 'fa-solid fa-comments', title: 'Consulta General' },
+                { icon: 'fa-solid fa-user-shield', title: 'Consulta con Abogado' },
+                { icon: 'fa-solid fa-calendar-check', title: 'Revisión de Caso' }
+            ]
+        };
+
+        const tabs = document.querySelectorAll('.tab');
+        const cardsContainer = document.getElementById('cards-container');
+
+        function renderCards(category) {
+            cardsContainer.classList.add('fade-out');
+
+            setTimeout(() => {
+                const cards = cardData[category]
+                    .map(card => `
+                <div class="card-container">
+                    <div class="card flip-card">
+                        <div class="card-front">
+                            <i class="${card.icon}"></i>
+                            <h3>${card.title}</h3>
+                            <div class="hint">↻ Pasa el cursor</div>
+                        </div>
+                        <div class="card-back">
+                            <p>${card.description || 'Descripción del servicio.'}</p>
+                        </div>
+                    </div>
+                </div>
+            `)
+                    .join('');
+                cardsContainer.innerHTML = cards;
+                cardsContainer.classList.remove('fade-out');
+            }, 300);
+        }
+
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const selectedTab = tab.getAttribute('data-tab');
+                renderCards(selectedTab);
+            });
+        });
+
+        // Render default tab
+        renderCards('visas');
+    </script>
+
+    <!-- Introduction Carrusel -->
+    <script>
+        const images = [
+            'Img/passport.jpeg',
+            'Img/visada.avif',
+            'Img/visado.jpeg',
+            'Img/visado.webp'
+        ];
+
+        const carousel = document.querySelector('.introduction-carousel');
+        const dotsContainer = document.getElementById('carousel-dots');
+        let current = 0;
+        let interval;
+
+        function setImage(index) {
+            current = index;
+            carousel.style.backgroundImage = `url('${images[current]}')`;
+            updateDots();
+        }
+
+        function updateDots() {
+            const dots = dotsContainer.querySelectorAll('button');
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === current);
+            });
+        }
+
+        function createDots() {
+            images.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.addEventListener('click', () => {
+                    clearInterval(interval);
+                    setImage(i);
+                    autoRotate(); // reinicia rotación
+                });
+                dotsContainer.appendChild(dot);
+            });
+        }
+
+        function autoRotate() {
+            interval = setInterval(() => {
+                current = (current + 1) % images.length;
+                setImage(current);
+            }, 5000);
+        }
+
+        // Inicializa
+        createDots();
+        setImage(0);
+        autoRotate();
+    </script>
+
+
 </body>
 
 </html>
