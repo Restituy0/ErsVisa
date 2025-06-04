@@ -1,8 +1,10 @@
 :root {
     --primary-color: #011063;
-    --primary-color-light: rgb(43, 76, 148);
+    --primary-color-light: rgb(20, 6, 209);
     --secondary-color: #ca0101;
-    --secondary-color-light: #e60000;
+    --secondary-color-light: #ff0000;
+    --background-color: #f8f9fa;
+    --white-color: #fff;
 }
 
 * {
@@ -18,7 +20,6 @@ body {
     transition: opacity 0.3s ease-in-out; /* Agregar una transición suave a toda la página */
     color: var(--primary-color);
 }
-
 
 
 hr {
@@ -70,21 +71,22 @@ hr {
 }
 
 .btn-date-navbar {
-    background-color: var(--secondary-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom right, var(--secondary-color), var(--secondary-color-light));
     color: #fff;
     padding: 10px 20px;
     font-weight: bold;
     border-radius: 20px;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease-in-out;
 }
 
 .btn-date-navbar:hover {
-    background-color: var(--secondary-color-light);
+    background: var(--secondary-color-light);
 }
 
 /* Estilos para el pie de página */
 footer {
-    background-color: var(--primary-color);
+    background: linear-gradient(to bottom right, var(--primary-color), var(--primary-color-light));
     color: #ffffff;
     text-align: center;
     padding: 20px 0;
@@ -127,7 +129,7 @@ footer {
 
 /* -- ANIMACIONES -- */
 
-@keyframes fade-in {
+@keyframes fade-in { 
     from {
         opacity: 0;
         transform: translateY(20px); /* Opcional: Añadir desplazamiento vertical */

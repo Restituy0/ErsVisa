@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ErsVisa - Asesoria y Gestión Migratoria</title>
-    <link rel="stylesheet" href="Css/main.Css" />
+    <link rel="stylesheet" href="Css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/Css2?family=Russo+One&display=swap" rel="stylesheet">
@@ -32,7 +32,7 @@
             position: absolute;
             inset: 0;
             background: rgba(0, 0, 0, 0.6);
-            color: #fff;
+            color: var(--white-color);
             z-index: 2;
             display: flex;
             flex-direction: column;
@@ -54,19 +54,22 @@
 
         .btn-primary {
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-            background: var(--secondary-color);
-            color: #fff;
+            background: linear-gradient(to bottom right, var(--secondary-color), var(--secondary-color-light));
+            background-color: var(--secondary-color);
+            color: var(--white-color);
             padding: 0.75rem 1.5rem;
             border: none;
-            border-radius: 8px;
+            border-radius: 1.5rem;
             text-decoration: none;
             font-weight: bold;
             display: inline-block;
             width: fit-content;
+            transition: all 0.5s ease-in-out;
         }
 
         .btn-primary:hover {
-            background: var(--secondary-color-light);
+            /* background: var(--secondary-color-light); */
+            transform: scale(1.1);
         }
 
 
@@ -111,21 +114,26 @@
         }
 
         .about h2 {
-            font-size: 1.75rem;
+            font-size: 2rem;
+            font-weight: 500;
             margin-bottom: 1rem;
+        }
+
+        .about p {
+            color: #333;
         }
 
         .about .ver-mas {
             display: inline-block;
             margin-top: 1rem;
-            color: #1e2a44;
-            text-decoration: underline;
+            color: #333;
+            text-decoration: none;
         }
 
         /* Section: Tabs y Servicios */
         .services {
             padding: 2rem;
-            background: #f8f9fa;
+            background: var(--background-color);
         }
 
         .services h1 {
@@ -156,7 +164,7 @@
         .tab {
             padding: 0.5rem 1rem;
             border: none;
-            background: #fff;
+            background: var(--white-color);
             cursor: pointer;
             font-weight: 600;
             color: var(--primary-color);
@@ -166,7 +174,7 @@
             border: none;
             border-radius: 0.2rem;
             background: #e60000;
-            color: #fff;
+            color: var(--white-color);
         }
 
         .card-container {
@@ -218,20 +226,20 @@
         }
 
         .card-front {
-            background: #fff;
+            background: var(--white-color);
             color: var(--primary-color);
         }
 
         .card-back {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             background: var(--primary-color);
-            color: #fff;
+            color: var(--white-color);
             transform: rotateY(180deg);
             text-align: center;
         }
 
         .card-back p {
-            color: #fff;
+            color: var(--white-color);
         }
 
         .card i {
@@ -275,7 +283,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background-color: #f8f9fa;
+            background-color: var(--background-color);
             padding: 20px;
         }
 
@@ -307,7 +315,7 @@
 
         .paso {
             min-width: 15rem;
-            background-color: #ffffff;
+            background-color: var(--white-color);
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -328,7 +336,7 @@
 
         .paso p {
             font-size: 16px;
-            color: #555;
+            color: #333;
             text-align: center;
         }
 
@@ -336,7 +344,6 @@
         .cta-modern {
             position: relative;
             background-image: url('Img/visado.webp');
-            /* Cambia a tu ruta */
             background-size: cover;
             background-position: center;
             /* background-attachment: fixed; */
@@ -352,7 +359,6 @@
             position: absolute;
             inset: 0;
             background: rgba(0, 0, 0, 0.3);
-            /* Oscurece la imagen */
             z-index: 1;
         }
 
@@ -361,11 +367,11 @@
             display: flex;
             justify-content: center;
             z-index: 2;
-            background: var(--primary-color);
+            background-image: linear-gradient(to right, rgba(255,0,0,0), var(--primary-color-light));
             padding: 2rem;
             min-width: 50rem;
             max-height: 6.5rem;
-            color: #fff;
+            color: var(--white-color);
             border-radius: 0 10rem 10rem 0;
             /*clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);*/
             margin-left: 0;
@@ -383,25 +389,20 @@
             margin-right: 30px;
             margin-top: -12px;
             text-align: center;
-            background-color: var(--secondary-color);
-            color: #fff;
+            background-color: var(--primary-color-light);
+            color: var(--white-color);
             padding: 0.9rem;
             border: none;
             width: 60px;
             height: 60px;
             border-radius: 50%;
             text-decoration: none;
-            transition: background-color 0.3s ease;
-            animation: scale 2s infinite;
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--secondary-color-light);
+            animation: scale 1.8s infinite;
         }
 
         @keyframes scale {
             0% {
-                background-color: var(--primary-color);
+                background-color: transparent;
             }
 
             50% {
@@ -410,17 +411,17 @@
             }
 
             100% {
-                background-color: var(--primary-color);
+                background-color: transparent;
             }
         }
 
         /* Section: Close */
         .seccion-cierre-oficinas {
-            background-color: var(--primary-color);
-            color: #ffffff;
+            background: linear-gradient(to top right, var(--primary-color), var(--primary-color-light));
+            color: var(--white-color);
             padding: 60px 0;
             text-align: center;
-            border-bottom: 1px solid #ffffff;
+            border-bottom: 1px solid var(--white-color);
         }
 
         .seccion-cierre-oficinas h2 {
@@ -435,19 +436,21 @@
         }
 
         .btn-ir-contacto {
-            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            background-color: var(--white-color);
             color: #003366;
             padding: 12px 20px;
             border: none;
-            border-radius: 5px;
+            border-radius: 1.5rem;
             font-size: 18px;
             text-decoration: none;
-            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
 
         .btn-ir-contacto:hover {
             background-color: #b41b1b;
-            color: #ffffff;
+            color: var(--white-color);
+            transform: scale(1.2);
         }
 
 
@@ -550,7 +553,7 @@
         <div class="overlay">
             <h1>Gestión y asesoría migratoria a todos los países</h1>
             <p>Ofrecemos apoyo legal para trámites de inmigración</p>
-            <a href="#" class="btn-primary">Agenda tu cita</a>
+            <a href="Sections/Agenda.html" class="btn-primary">Agenda tu cita</a>
         </div>
 
         <div class="carousel-dots" id="carousel-dots">
@@ -560,7 +563,7 @@
 
     <!-- About Us -->
     <section class="about">
-        <h2>Quiénes Somos</h2>
+        <h2>¿Quiénes Somos?</h2>
         <p>
             Somos una firma legal especializada en procesos migratorios, dedicada a ayudar a nuestros clientes a navegar
             el complejo camino hacia una nueva vida en el extranjero.
@@ -623,7 +626,7 @@
         <div class="cta-content">
             <h2>¿Qué esperas para pedir tu asesoría?</h2>
             <a href="https://wa.link/uropst" class="btn-secondary" target="_blank"><i class="fa-solid fa-phone"
-                    style="color: #ffffff; font-size: 2rem;"></i></a>
+                    style="color: var(--white-color)fff; font-size: 2rem;"></i></a>
         </div>
     </section>
 
