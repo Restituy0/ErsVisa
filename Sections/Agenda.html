@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contáctanos | Fundación Sofía Lorenzo</title>
+    <title>Contáctanos | ErsVisa</title>
     <link rel="stylesheet" href="../Css/main.css">
-    <link rel="icon" href="../img/logo.png">
+    <link rel="icon" href="../Img/ErsVisa.ico"> <!-- Corrected path for favicon -->
     <script src="https://kit.fontawesome.com/f66f1c652f.js" crossorigin="anonymous"></script>
     <style>
         /* Font Russo One */
@@ -17,14 +17,14 @@
             display: flex;
             align-items: center;
             flex-direction: column;
-            max-width: 1200px;
+            max-width: 75rem; /* 1200px */
             margin: auto;
-            padding: 20px;
+            padding: 1.25rem; /* 20px */
             text-align: center;
         }
 
         .contact-header {
-            margin-top: 5rem;
+            margin-top: 6rem; /* Adjusted from 5rem for better spacing below navbar */
             font-size: 2.5em;
             font-weight: bold;
             color: var(--primary-color);
@@ -32,98 +32,122 @@
 
         .contact-header::after {
             content: '';
-            width: 100px;
-            height: 5px;
+            width: 6.25rem; /* 100px */
+            height: 0.3125rem; /* 5px */
             background: var(--secondary-color);
             display: block;
-            margin: 0 auto;
+            margin: -0.5rem auto 0.5rem; /* Adjusted margin */
             border-radius: 1.5rem;
-            margin-bottom: 0.5rem;
         }
 
         .contact-info {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1.5rem; /* Adjusted from 0.5rem */
+            gap: 0.75rem; /* Added gap between items */
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 15px;
-            font-size: 1.2rem;
+            gap: 0.9375rem; /* 15px */
+            font-size: 1.1rem; /* Adjusted from 1.2rem */
+            color: var(--text-color-dark); /* Added color for better visibility */
         }
 
         .contact-item img {
-            width: 15px;
+            width: 1.25rem; /* Adjusted from 15px */
+            height: 1.25rem; /* Added height for consistency */
+            vertical-align: middle; /* Align icon with text */
         }
 
         /* ------------------ FORMULARIO ------------------ */
         .contact-form {
-            background-color: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            padding: 40px;
+            background-color: var(--white-color);
+            border-radius: 0.9375rem; /* 15px */
+            box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+            padding: 2.5rem; /* 40px */
             width: 100%;
-            max-width: 600px;
+            max-width: 37.5rem; /* 600px */
+            border: 1px solid var(--border-color); /* Subtle border */
         }
 
         .contact-form h1 {
             color: var(--primary-color);
+            font-size: 1.8rem; /* Adjusted font size */
+            margin-bottom: 1.5rem; /* Added margin */
+            font-weight: 700;
         }
 
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 1.5625rem; /* 25px */
             text-align: left;
         }
 
         .form-group label {
-            font-size: 1.1em;
+            font-size: 1em; /* Adjusted from 1.1em */
             color: var(--primary-color);
-            margin-bottom: 8px;
+            margin-bottom: 0.5rem; /* 8px */
             display: block;
+            font-weight: 600; /* Added font-weight */
         }
 
         .form-group input,
-        .form-group textarea {
-            width: 95%;
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid #ddd;
+        .form-group textarea,
+        .form-group select { /* Added select for potential future use */
+            width: 100%; /* Full width */
+            padding: 0.9375rem; /* 15px */
+            border-radius: 0.625rem; /* 10px */
+            border: 0.0625rem solid var(--border-color); /* 1px */
             font-size: 1em;
-            color: var(--primary-color);
+            color: var(--text-color-dark);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box; /* Include padding in width */
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary-color-light);
+            box-shadow: 0 0 0 0.1875rem rgba(1, 16, 99, 0.2);
+            outline: none;
         }
 
         .btn-submit {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-light) 100%);
-            color: #fff;
-            padding: 15px 30px;
+            color: var(--white-color);
+            padding: 0.9375rem 1.875rem; /* 15px 30px */
             border: none;
-            border-radius: 10px;
-            font-size: 1.2em;
+            border-radius: 0.625rem; /* 10px */
+            font-size: 1.1em;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
             width: 100%;
-            margin-top: 20px;
+            margin-top: 1.25rem; /* 20px */
+            font-weight: bold;
+            box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
         }
 
         .btn-submit:hover {
-            background: var(--primary-color-light);
+            background: var(--secondary-color); /* Change to secondary color on hover */
+            transform: translateY(-0.125rem);
+            box-shadow: 0 0.375rem 0.75rem rgba(0, 0, 0, 0.3);
         }
 
         /* ------------------ CONTACTO WHATSAPP ------------------ */
         .whatsapp-card {
-            margin: 20px auto;
+            margin: 1.25rem auto; /* 20px */
             background: linear-gradient(135deg, #007a10 0%, #128c7e 100%);
-            border-radius: 15px;
-            color: white;
-            padding: 25px;
-            max-width: 50%;
+            border-radius: 2.75rem;
+            color: var(--white-color);
+            padding: 1rem 2rem;
+            max-width: 50%; /* Adjusted from 50% for better control */
             display: flex;
             align-items: center;
             justify-content: space-around;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /* 8px 16px */
+            text-align: left; /* Align text to left within card */
         }
 
         .whatsapp-info {
@@ -131,58 +155,118 @@
             align-items: center;
             flex-direction: row;
             gap: 1rem;
+            flex-grow: 1; /* Allow info to take available space */
         }
 
         .whatsapp-icon img {
-            width: 60px;
-            height: 60px;
-            margin-right: 10px;
+            width: 3.75rem; /* 60px */
+            height: 3.75rem; /* 60px */
+            margin-right: 0.625rem; /* 10px */
+            flex-shrink: 0; /* Prevent shrinking */
         }
 
         .whatsapp-info h3 {
             margin: 0;
-            font-size: 1.5em;
+            font-size: 1.4em; /* Adjusted from 1.5em */
+            font-weight: bold; /* Added font-weight */
         }
 
         .whatsapp-info p {
             margin: 0;
-            font-size: 1.1em;
+            font-size: 1em; /* Adjusted from 1.1em */
+            line-height: 1.5; /* Improved readability */
         }
 
         .btn-whatsapp {
-            width: 60px;
-            height: 60px;
+            width: 3.75rem; /* 60px */
+            height: 3.75rem; /* 60px */
             border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.5);
             background-color: #128c7e;
-            color: white;
+            color: var(--white-color);
             text-align: center;
             padding: 0.9rem;
             border-radius: 50%;
             text-decoration: none;
             font-weight: bold;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform transition */
+            display: flex; /* Use flex to center icon */
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0; /* Prevent shrinking */
         }
 
         .btn-whatsapp:hover {
             background-color: #007a10;
+            transform: scale(1.05); /* Slight scale on hover */
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 48em) { /* 768px / 16px = 48em */
+            .contact-header {
+                font-size: 2em; /* Smaller font for mobile */
+            }
+
+            .contact-item {
+                font-size: 1rem; /* Smaller font for mobile */
+                text-align: center; /* Center text for mobile */
+                flex-direction: column; /* Stack icon and text */
+                gap: 0.25rem; /* Smaller gap */
+            }
+
+            .contact-item img {
+                width: 1.5rem; /* Slightly larger icon for mobile */
+                height: 1.5rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem; /* Smaller padding for mobile */
+            }
+
+            .contact-form h1 {
+                font-size: 1.5rem; /* Smaller font for mobile */
+            }
 
             .form-group {
                 text-align: center;
             }
 
+            .form-group input,
+            .form-group textarea {
+                width: 100%; /* Full width for inputs */
+                padding: 0.75rem; /* Smaller padding for inputs */
+            }
+
+            .btn-submit {
+                font-size: 1em; /* Smaller font for mobile button */
+                padding: 0.75rem 1.5rem; /* Smaller padding for mobile button */
+            }
+
+            .whatsapp-card {
+                max-width: 90%; /* Wider for mobile */
+                flex-direction: column; /* Stack content vertically */
+                text-align: center; /* Center text */
+                padding: 1.25rem; /* Smaller padding */
+                gap: 1rem; /* Added gap */
+            }
+
+            .whatsapp-info {
+                flex-direction: column; /* Stack info vertically */
+                gap: 0.5rem; /* Smaller gap */
+            }
+
             .whatsapp-info p {
-                display: none;
+                display: none; /* Hide paragraph on mobile for brevity */
             }
 
-            .whatsapp-card{
-                max-width: 80%;
+            .whatsapp-info h3 {
+                font-size: 1.2em; /* Smaller font for mobile */
             }
-            
 
+            .btn-whatsapp {
+                width: 3rem; /* Smaller button for mobile */
+                height: 3rem; /* Smaller button for mobile */
+                padding: 0.75rem; /* Smaller padding */
+            }
         }
     </style>
 </head>
@@ -193,7 +277,7 @@
         <div class="logo">ERS<span>VISA</span></div>
 
         <!-- Botón hamburguesa para móviles -->
-        <div class="menu-toggle" id="menuToggle">
+        <div class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
             <span></span>
             <span></span>
             <span></span>
@@ -211,103 +295,115 @@
     </header>
 
     <main>
-        <section class="contact-container">
+        <section class="contact-container" role="region" aria-labelledby="contact-heading">
 
             <!-- Header -->
-            <h2 class="contact-header">Reserva tu cita</h2>
+            <h2 class="contact-header" id="contact-heading">Reserva tu cita</h2>
             <div class="contact-info">
                 <div class="contact-item">
-
-                    <img src="../Img/ubicacion-icon.svg" alt="Ubicación">
+                    <img src="../Img/ubicacion-icon.svg" alt="Icono de Ubicación" loading="lazy">
                     <span>Plaza Rodriguez Estrella, Calle Cristo, Santo Domingo, D.N.</span>
                 </div>
                 <div class="contact-item">
-                    <img src="../Img/telefono-icon.svg" alt="Teléfono">
+                    <img src="../Img/telefono-icon.svg" alt="Icono de Teléfono" loading="lazy">
                     <span>809-397-5678 | 829-321-9182</span>
                 </div>
                 <div class="contact-item">
-                    <img src="../Img/correo-icon.svg" alt="Email">
+                    <img src="../Img/correo-icon.svg" alt="Icono de Correo Electrónico" loading="lazy">
                     <span>ersvisa@gmail.com</span>
                 </div>
             </div>
-            <!-- Formulario de Contacto -->
-            <form action="https://formsubmit.co/ersvisa@gmail.com" method="POST" class="contact-form">
-                <h1 style="text-align: center;">Llena este formulario</h1>
+            <!-- Formulario de Contacto Mejorado -->
+            <form action="https://formsubmit.co/ersvisa@gmail.com" method="POST" class="contact-form" aria-label="Formulario de contacto para reservar cita">
                 <div class="form-group">
                     <label for="nombre">Nombre Completo:</label>
-                    <input type="text" id="nombre" name="nombre" required>
+                    <input type="text" id="nombre" name="nombre" required aria-required="true" placeholder="Tu nombre completo">
                 </div>
                 <div class="form-group">
                     <label for="correo">Correo Electrónico:</label>
-                    <input type="email" id="correo" name="correo" required>
+                    <input type="email" id="correo" name="correo" required aria-required="true" placeholder="tu.correo@ejemplo.com">
                 </div>
                 <div class="form-group">
                     <label for="telefono">Teléfono:</label>
-                    <input type="tel" id="telefono" name="telefono" required>
+                    <input type="tel" id="telefono" name="telefono" required aria-required="true" placeholder="Ej: 809-123-4567">
                 </div>
                 <div class="form-group">
-                    <label for="mensaje" style="text-align: center;">Escribe tu mensaje</label>
-                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                    <label for="motivo">Motivo de la Cita (Opcional):</label>
+                    <textarea id="motivo" name="motivo" rows="3" placeholder="Breve descripción del motivo de tu cita..."></textarea>
                 </div>
-                <button type="submit" class="btn-submit">Enviar</button>
+                <button type="submit" class="btn-submit">Enviar Solicitud</button>
                 <input type="hidden" name="_next" value="https://ersvisa.com/sections/Agenda.html">
                 <input type="hidden" name="_captcha" value="false">
             </form>
-
         </section>
 
-        <h3
-            style="text-align: center; margin: 0 auto;">
-            O
-        </h3>
-
         <!-- Card de WhatsApp -->
-        <div class="whatsapp-card">
+        <div class="whatsapp-card" role="complementary" aria-label="Contacto rápido por WhatsApp">
             <div class="whatsapp-info">
                 <h3>Contáctanos en WhatsApp</h3>
                 <p>¿Tienes alguna pregunta? ¡Estamos aquí para ayudarte!</p>
-                <a href="https://wa.link/uropst" class="btn-whatsapp" target="_blank"><i class="fa-solid fa-phone"
-                        style="color: var(--white-color)fff; font-size: 2rem;"></i></a>
             </div>
+            <a href="https://wa.link/uropst" class="btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Enviar mensaje a ErsVisa por WhatsApp">
+                <i class="fa-solid fa-phone" style="color: var(--white-color); font-size: 2rem;" aria-hidden="true"></i>
+            </a>
         </div>
     </main>
 
-    <!--Footer-->
-    <footer class="nuevo-footer">
+     <!-- Footer -->
+    <footer class="nuevo-footer" role="contentinfo">
         <div class="footer-container">
 
             <!-- Columna: Contacto -->
             <div class="footer-col contacto">
                 <h3>Contáctanos</h3>
                 <ul>
-                    <li><i class="fas fa-envelope"></i><a href="mailto:ersvisa@gmail.com">ersvisa@gmail.com</a></li>
-                    <li><i class="fab fa-whatsapp"></i><a href="https://wa.link/uropst" target="_blank">Lic. Edward Restituyo: +1
-                            809-397-5678</a></li>
-                    <li><i class="fab fa-whatsapp"></i><a href="https://wa.link/rfbh0i" target="_blank">Lic Mariela Lopez: +1
-                            849-359-3318</a></li>
+                    <li><i class="fas fa-envelope" aria-hidden="true"></i><a
+                            href="mailto:ersvisa@gmail.com">ersvisa@gmail.com</a></li>
+                    <li><i class="fab fa-whatsapp" aria-hidden="true"></i><a href="https://wa.link/uropst"
+                            target="_blank" rel="noopener noreferrer">Lic. Edward Restituyo: +1 809-397-5678</a></li>
+                    <li><i class="fab fa-whatsapp" aria-hidden="true"></i><a href="https://wa.link/rfbh0i"
+                            target="_blank" rel="noopener noreferrer">Lic. Mariela Lopez: +1 849-359-3318</a></li>
+                    <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><a
+                            href="Sections/NuestrasOficinas.html">Nuestras Oficinas</a></li>
                 </ul>
             </div>
 
-            <!-- Columna: Redes -->
+            <!-- Columna: Navegación Rápida -->
+            <div class="footer-col navegacion-rapida">
+                <h3>Navegación Rápida</h3>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="Sections/NuestrasOficinas.html">Oficinas</a></li>
+                    <li><a href="Sections/Equipo.html">Sobre Nosotros</a></li>
+                    <li><a href="Sections/Agenda.html">Reservar Cita</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna: Redes Sociales -->
             <div class="footer-col redes">
-                <h3>Redes Sociales</h3>
+                <h3>Síguenos</h3>
                 <div class="social-icons">
-                    <a href="https://www.facebook.com/ersvisa/" target="_blank" aria-label="Facebook"><i
-                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/ersvisa/" target="_blank" aria-label="Facebook"
+                        rel="noopener noreferrer"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
                     <a href="https://www.instagram.com/ersvisa_abogados_migratorios/" target="_blank"
-                        aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        aria-label="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"
+                            aria-hidden="true"></i></a>
+                    <a href="#" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer"><i
+                            class="fab fa-linkedin" aria-hidden="true"></i></a>
                 </div>
             </div>
 
             <!-- Columna: Mensaje institucional -->
             <div class="footer-col mensaje">
                 <h3>ERS<span>VISA</span></h3>
-                <p>Comprometidos con tu futuro migratorio.</p>
+                <p>Tu socio confiable en el camino hacia tus sueños migratorios.</p>
             </div>
+
         </div>
 
         <div class="footer-bottom">
             <p>&copy; 2025 ERSVISA. Todos los derechos reservados.</p>
+            <p>Diseñado por Dariel Restituyo</p>
         </div>
     </footer>
 

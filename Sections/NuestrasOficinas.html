@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Css/main.css">
-    <link rel="icon" type="image/png" href="../Img/Logo-ErsVisa-Original.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/Css/all.min.css">
+    <link rel="icon" type="image/png" href="../Img/ErsVisa.ico"> <!-- Corrected path for favicon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
             background-image: url('../Img/oficinas-banner.jpg');
             background-size: cover;
             background-position: center;
-            height: 60vh;
+            height: 30rem; /* Adjusted from 60vh for consistency */
             position: relative;
             display: flex;
             align-items: center;
@@ -38,19 +38,20 @@
         }
 
         .hero-content {
-            color: white;
+            color: var(--white-color);
             text-align: center;
-            max-width: 800px;
+            max-width: 50rem; /* 800px */
             padding: 2rem;
         }
 
         .hero-content h1 {
-            font-size: 3rem;
+            font-size: 2.8rem; /* Adjusted from 3rem */
             margin-bottom: 1rem;
+            font-weight: 700; /* Made bolder */
         }
 
         .hero-content p {
-            font-size: 1.2rem;
+            font-size: 1.1rem; /* Adjusted from 1.2rem */
             line-height: 1.6;
         }
 
@@ -68,7 +69,6 @@
             min-height: 100vh;
             background-size: cover;
             background-attachment: fixed;
-            /* Parallax effect */
             background-position: center;
             display: flex;
             align-items: center;
@@ -78,15 +78,15 @@
         }
 
         .overlay {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.55);
+            box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.55);
             text-align: center;
             background: rgba(0, 0, 0, 0.55);
-            padding: 3rem;
-            min-width: 700px;
+            padding: 2.5rem; /* Adjusted from 3rem */
+            min-width: 35rem; /* Adjusted from 700px */
             margin-left: 5%;
             border-radius: 0.3rem;
             opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(2.5rem); /* 40px */
             transition: opacity 1s ease, transform 1s ease;
         }
 
@@ -101,24 +101,27 @@
             border-radius: 999px;
             font-size: 0.9rem;
             margin-bottom: 0.5rem;
-            background-color: var(--secondary-color);
-            color: white;
+            background: linear-gradient(to bottom right, var(--secondary-color-light), var(--secondary-color));
+            color: var(--white-color);
+            font-weight: 600; /* Added font-weight */
         }
 
         .etiqueta.sucursal {
-            background-color: #2196f3;
+            background: linear-gradient(to bottom right, var(--primary-color-light), var(--primary-color));
         }
 
         .Office-Banner h2 {
-            font-size: 2.5rem;
+            font-size: 2.25rem; /* Adjusted from 2.5rem */
             margin-top: 1rem;
-            color: #fff;
+            color: var(--white-color);
+            font-weight: 700; /* Made bolder */
         }
 
         .Office-Banner p {
-            font-size: 1.1rem;
+            font-size: 1.05rem; /* Adjusted from 1.1rem */
             margin: 0.5rem 0;
             color: #eee;
+            line-height: 1.6; /* Improved readability */
         }
 
         .botones {
@@ -131,41 +134,59 @@
 
         .btn-map,
         .btn-agendar {
-            background-color: white;
-            color: black;
+            width: 50%;
+            background-color: var(--white-color);
+            color: var(--primary-color); /* Changed to primary color */
             padding: 0.7rem 1.4rem;
             border: none;
             border-radius: 2rem;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.5s ease;
+            transition: all 0.3s ease; /* Smoother transition */
+            font-size: 1rem; /* Added font size */
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2); /* Added subtle shadow */
         }
 
         .btn-map:hover,
         .btn-agendar:hover {
-            background-color: #222;
-            color: white;
+            background: linear-gradient(to bottom right, var(--primary-color), var(--primary-color-light));
+            color: var(--white-color); /* Changed hover text color */
+            transform: translateY(-0.125rem); /* Slight lift on hover */
+            box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 48em) { /* 768px / 16px = 48em */
             .Office-Banner {
                 background-attachment: scroll;
                 min-height: 80vh;
             }
 
             .overlay {
-                padding: 2rem;
+                padding: 1.5rem; /* Adjusted padding */
                 margin: auto;
+                min-width: auto;
+                width: 90%;
             }
 
             .Office-Banner h2 {
-                font-size: 2rem;
+                font-size: 1.8rem; /* Smaller font for mobile */
+            }
+
+            .Office-Banner p {
+                font-size: 0.95rem; /* Smaller font for mobile */
             }
 
             .botones {
                 flex-direction: column;
                 gap: 0.8rem;
+            }
+
+            .btn-map,
+            .btn-agendar {
+                padding: 0.6rem 1.2rem; /* Adjusted padding */
+                width: 80%; /* Wider buttons for mobile */
+                margin: 0 auto; /* Center buttons */
             }
         }
 
@@ -189,26 +210,33 @@
 
         .modal-content {
             position: relative;
-            background: #fff;
-            padding: 1rem;
+            background: var(--white-color);
+            padding: 1.5rem; /* Adjusted from 1rem */
             border-radius: 1rem;
             width: 90%;
-            max-width: 800px;
+            max-width: 50rem; /* 800px */
+            box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3); /* Added shadow */
         }
 
         .modal-content iframe {
             width: 100%;
-            height: 400px;
+            height: 25rem; /* 400px */
             border: none;
             border-radius: 0.5rem;
         }
 
         .close-modal {
             position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 1.8rem;
+            top: 0.625rem; /* 10px */
+            right: 1.25rem; /* 20px */
+            font-size: 2rem; /* Adjusted from 1.8rem */
             cursor: pointer;
+            color: var(--text-color-dark); /* Darker color for visibility */
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: var(--secondary-color); /* Hover color */
         }
 
         .scroll-indicators {
@@ -223,13 +251,13 @@
         }
 
         .dot {
-            width: 14px;
-            height: 14px;
+            width: 0.875rem; /* 14px */
+            height: 0.875rem; /* 14px */
             border-radius: 50%;
             background-color: transparent;
             transition: all 0.3s ease;
             cursor: pointer;
-            border: 1px solid #d3d3d3;
+            border: 0.0625rem solid var(--border-color); /* 1px */
         }
 
         .dot.active {
@@ -241,45 +269,45 @@
             width: 100%;
             margin: 0 auto;
             position: fixed;
-            bottom: 20px;
-            left: 70%;
+            bottom: 1.25rem; /* 20px */
+            left: 50%; /* Centered */
             transform: translateX(-50%);
-            background: transparent;
-            padding: 10px 16px;
-            font-size: 0.8rem;
+            background: rgba(0, 0, 0, 0.6); /* Darker background for visibility */
+            color: var(--white-color); /* White text */
+            padding: 0.625rem 1rem; /* 10px 16px */
+            font-size: 0.9rem; /* Adjusted font size */
             font-weight: 500;
-            color: #888;
+            border-radius: 0.5rem; /* Rounded corners */
             animation: floatHint 2.5s ease-in-out infinite;
             z-index: 1000;
-            display: none;
+            display: none; /* Hidden by default, shown in media query */
+            text-align: center; /* Center text */
+            max-width: 15rem; /* Limit width */
         }
 
         @keyframes floatHint {
-
             0% {
-                opacity: 0.4;
-            }
-
-            100% {
-                opacity: 0.4;
+                opacity: 0.7; /* Adjusted opacity */
                 transform: translate(-50%, 0);
             }
-
             50% {
                 opacity: 1;
-                transform: translate(-50%, -8px);
+                transform: translate(-50%, -0.5rem); /* 8px */
+            }
+            100% {
+                opacity: 0.7; /* Adjusted opacity */
+                transform: translate(-50%, 0);
             }
         }
 
         /* --- RESPONSIVO --- */
-        @media (max-width: 768px) {
-
+        @media (max-width: 48em) { /* 768px / 16px = 48em */
             .Office-Banner {
                 min-height: 100vh;
             }
 
             .overlay {
-                padding: 1rem;
+                padding: 1.5rem;
                 margin-left: auto;
                 min-width: auto;
                 width: 90%;
@@ -292,8 +320,9 @@
 
             .btn-map,
             .btn-agendar {
-                padding: 0.5rem 1rem;
-                width: 50%;
+                padding: 0.75rem 1.5rem; /* Adjusted padding */
+                width: 90%; /* Wider for mobile */
+                font-size: 1.05rem; /* Slightly larger font */
             }
 
             .scroll-indicators {
@@ -330,11 +359,11 @@
             }
 
             .swipe-hint {
-                display: block;
+                display: block; /* Show hint on mobile */
             }
 
             .dot {
-                display: none;
+                display: none; /* Hide dots on mobile */
             }
         }
     </style>
@@ -346,7 +375,7 @@
         <div class="logo">ERS<span>VISA</span></div>
 
         <!-- Botón hamburguesa para móviles -->
-        <div class="menu-toggle" id="menuToggle">
+        <div class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
             <span></span>
             <span></span>
             <span></span>
@@ -364,46 +393,44 @@
     </header>
 
     <!-- Seccion: Oficinas -->
-    <section class="Offices">
+    <section class="Offices" role="region" aria-label="Nuestras Oficinas">
         <!-- Oficina Santo Domingo -->
-        <div class="Office-Banner section" style="background-image: url('../Img/oficina1.jpg');">
+        <div class="Office-Banner section" style="background-image: url('../Img/oficina1.jpg');" role="img" aria-label="Oficina Principal en Plaza Rodriguez">
             <div class="overlay animar">
                 <span class="etiqueta principal">Oficina Principal</span>
                 <h2>Plaza Rodriguez</h2>
                 <p>Av. República de Colombia, Calle el Cristo, Santo Domingo</p>
                 <p>Tel: +1 (809) 397-5678</p>
                 <div class="botones">
-                    <a href="https://maps.app.goo.gl/bwEUjmoCL2amevW19" target="_blank" class="btn-map">Ver mapa</a>
+                    <a href="https://maps.app.goo.gl/bwEUjmoCL2amevW19" target="_blank" class="btn-map" rel="noopener noreferrer" aria-label="Ver mapa de Plaza Rodriguez">Visitar</a>
                     <!-- <a href="https://wa.link/uropst" target="_blank" class="btn-agendar">Reservar Cita</a> -->
                 </div>
             </div>
         </div>
 
         <!-- Oficina Sombra -->
-        <div class="Office-Banner section" style="background-image: url('../Img/oficina2.jpg');">
+        <div class="Office-Banner section" style="background-image: url('../Img/oficina2.jpg');" role="img" aria-label="Sucursal Parqueo Sombra I">
             <div class="overlay animar">
                 <span class="etiqueta sucursal">Sucursal</span>
                 <h2>Parqueo Sombra I</h2>
                 <p>Av. República de Colombia, Calle el Cristo, Santo Domingo</p>
                 <p>Tel: +1 (809) 397-5678</p>
                 <div class="botones">
-                    <a href="https://maps.app.goo.gl/VfuYoZkcUUomR86H9" target="_blank" class="btn-map">Ver
-                        mapa</a>
+                    <a href="https://maps.app.goo.gl/VfuYoZkcUUomR86H9" target="_blank" class="btn-map" rel="noopener noreferrer" aria-label="Ver mapa de Parqueo Sombra I">Visitar</a>
                     <!-- <a href="https://wa.link/uropst" target="_blank" class="btn-agendar">Reservar Cita</a> -->
                 </div>
             </div>
         </div>
 
         <!-- Oficina Comedor -->
-        <div class="Office-Banner section" style="background-image: url('../Img/oficina3.jpeg');">
+        <div class="Office-Banner section" style="background-image: url('../Img/oficina3.jpeg');" role="img" aria-label="Sucursal Parqueo Sombra II">
             <div class="overlay animar">
                 <span class="etiqueta sucursal">Sucursal</span>
                 <h2>Parqueo Sombra II</h2>
                 <p>Av. República de Colombia, Calle el Cristo, Santo Domingo</p>
                 <p>Tel: +1 (809) 397-5678</p>
                 <div class="botones">
-                    <a href="https://maps.app.goo.gl/KqsTzVGqMXumucmP6" target="_blank" class="btn-map">Ver
-                        mapa</a>
+                    <a href="https://maps.app.goo.gl/KqsTzVGqMXumucmP6" target="_blank" class="btn-map" rel="noopener noreferrer" aria-label="Ver mapa de Parqueo Sombra II">Visitar</a>
                     <!-- <a href="https://wa.link/uropst" target="_blank" class="btn-agendar">Reservar Cita</a> -->
                 </div>
             </div>
@@ -412,52 +439,72 @@
     </section>
 
     <!-- Indicadores de Navegación Vertical -->
-    <div class="scroll-indicators" id="dot-container"></div>
+    <div class="scroll-indicators" id="dot-container" role="navigation" aria-label="Navegación de oficinas"></div>
 
     <!-- Modal de map -->
-    <div class="map-modal hidden" id="mapaModal">
+    <div class="map-modal hidden" id="mapaModal" role="dialog" aria-modal="true" aria-labelledby="map-modal-title">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <iframe id="mapaIframe" src="" allowfullscreen="" loading="lazy"></iframe>
+            <h2 id="map-modal-title" class="sr-only">Mapa de Ubicación</h2> <!-- sr-only for screen readers -->
+            <span class="close-modal" role="button" tabindex="0" aria-label="Cerrar mapa">&times;</span>
+            <iframe id="mapaIframe" src="" allowfullscreen="" loading="lazy" title="Mapa de la oficina"></iframe>
         </div>
     </div>
 
-    <!--Footer-->
-    <footer class="nuevo-footer">
+     <!-- Footer -->
+    <footer class="nuevo-footer" role="contentinfo">
         <div class="footer-container">
 
             <!-- Columna: Contacto -->
             <div class="footer-col contacto">
                 <h3>Contáctanos</h3>
                 <ul>
-                    <li><i class="fas fa-envelope"></i><a href="mailto:ersvisa@gmail.com">ersvisa@gmail.com</a></li>
-                    <li><i class="fab fa-whatsapp"></i><a href="https://wa.link/uropst" target="_blank">Lic. Edward Restituyo: +1
-                            809-397-5678</a></li>
-                    <li><i class="fab fa-whatsapp"></i><a href="https://wa.link/rfbh0i" target="_blank">Lic Mariela Lopez: +1
-                            849-359-3318</a></li>
+                    <li><i class="fas fa-envelope" aria-hidden="true"></i><a
+                            href="mailto:ersvisa@gmail.com">ersvisa@gmail.com</a></li>
+                    <li><i class="fab fa-whatsapp" aria-hidden="true"></i><a href="https://wa.link/uropst"
+                            target="_blank" rel="noopener noreferrer">Lic. Edward Restituyo: +1 809-397-5678</a></li>
+                    <li><i class="fab fa-whatsapp" aria-hidden="true"></i><a href="https://wa.link/rfbh0i"
+                            target="_blank" rel="noopener noreferrer">Lic. Mariela Lopez: +1 849-359-3318</a></li>
+                    <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><a
+                            href="Sections/NuestrasOficinas.html">Nuestras Oficinas</a></li>
                 </ul>
             </div>
 
-            <!-- Columna: Redes -->
+            <!-- Columna: Navegación Rápida -->
+            <div class="footer-col navegacion-rapida">
+                <h3>Navegación Rápida</h3>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="Sections/NuestrasOficinas.html">Oficinas</a></li>
+                    <li><a href="Sections/Equipo.html">Sobre Nosotros</a></li>
+                    <li><a href="Sections/Agenda.html">Reservar Cita</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna: Redes Sociales -->
             <div class="footer-col redes">
-                <h3>Redes Sociales</h3>
+                <h3>Síguenos</h3>
                 <div class="social-icons">
-                    <a href="https://www.facebook.com/ersvisa/" target="_blank" aria-label="Facebook"><i
-                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/ersvisa/" target="_blank" aria-label="Facebook"
+                        rel="noopener noreferrer"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
                     <a href="https://www.instagram.com/ersvisa_abogados_migratorios/" target="_blank"
-                        aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        aria-label="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"
+                            aria-hidden="true"></i></a>
+                    <a href="#" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer"><i
+                            class="fab fa-linkedin" aria-hidden="true"></i></a>
                 </div>
             </div>
 
             <!-- Columna: Mensaje institucional -->
             <div class="footer-col mensaje">
                 <h3>ERS<span>VISA</span></h3>
-                <p>Comprometidos con tu futuro migratorio.</p>
+                <p>Tu socio confiable en el camino hacia tus sueños migratorios.</p>
             </div>
+
         </div>
 
         <div class="footer-bottom">
             <p>&copy; 2025 ERSVISA. Todos los derechos reservados.</p>
+            <p>Diseñado por Dariel Restituyo</p>
         </div>
     </footer>
 
@@ -469,23 +516,35 @@
     <!-- Js map -->
     <script>
         // script.js
-        document.querySelectorAll('.ver-map-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                const mapaURL = button.getAttribute('data-map');
+        document.querySelectorAll('.btn-map').forEach(button => { // Changed class name to match HTML
+            button.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent default link behavior
+                const mapaURL = button.getAttribute('href'); // Get href directly
                 document.getElementById('mapaIframe').src = mapaURL;
                 document.getElementById('mapaModal').classList.remove('hidden');
+                document.getElementById('mapaModal').focus(); // Focus modal for accessibility
             });
         });
 
         document.querySelector('.close-modal').addEventListener('click', () => {
             document.getElementById('mapaModal').classList.add('hidden');
-            document.getElementById('mapaIframe').src = '';
+            document.getElementById('mapaIframe').src = ''; // Clear iframe src
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !document.getElementById('mapaModal').classList.contains('hidden')) {
+                document.getElementById('mapaModal').classList.add('hidden');
+                document.getElementById('mapaIframe').src = '';
+            }
         });
 
         const observador = new IntersectionObserver((entradas) => {
             entradas.forEach((entrada) => {
                 if (entrada.isIntersecting) {
                     entrada.target.classList.add('visible');
+                } else {
+                    entrada.target.classList.remove('visible'); // Remove visible class when not intersecting
                 }
             });
         }, {

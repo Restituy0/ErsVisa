@@ -1,10 +1,14 @@
 :root {
     --primary-color: #011063;
-    --primary-color-light: rgb(20, 6, 209);
+    --primary-color-light: #011588;
     --secondary-color: #ca0101;
     --secondary-color-light: #ff0000;
     --background-color: #f8f9fa;
+    --background-color-light: #ecf0f1;
     --white-color: #fff;
+    --text-color-dark: #333;
+    --text-color-light: #666;
+    --border-color: #ddd;
 }
 
 * {
@@ -13,22 +17,37 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 16px;
+    /* Base font size for rem units */
+}
+
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    background: #f8f9fa;
+    background: var(--background-color);
     transition: opacity 0.3s ease-in-out;
-    /* Agregar una transición suave a toda la página */
     color: var(--primary-color);
+    scroll-behavior: smooth;
+    font-size: 1rem;
+    /* Default font size */
 }
-
 
 hr {
     margin: 0 auto;
     background-color: transparent;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.3);
     max-width: 60%;
     opacity: 20%;
+}
+
+.container {
+    width: 100%;
+    max-width: 75rem;
+    /* 1200px / 16px = 75rem */
+    margin: 0 auto;
+    padding: 1.25rem 0;
+    /* 20px / 16px = 1.25rem */
 }
 
 /* ===== NAVBAR BASE ===== */
@@ -38,10 +57,12 @@ hr {
     left: 15%;
     width: 70%;
     padding: 1rem 2rem;
-    background: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    border-bottom: 1px solid #ddd;
-    border-radius: 3rem;
+    margin: 0.5rem;
+    background: var(--white-color);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+    border-bottom: 0.0625rem solid #ddd;
+    /* 1px / 16px = 0.0625rem */
+    border-radius: 0.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,6 +75,12 @@ hr {
 .navbar.hidden {
     transform: translateY(-100%);
     opacity: 0;
+}
+
+.navbar.border {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    transition: all 0s;
 }
 
 /* Logo */
@@ -82,6 +109,8 @@ nav a {
     font-weight: 600;
     position: relative;
     transition: all 0.3s ease;
+    font-size: 1rem;
+    /* Adjusted font size */
 }
 
 nav a:hover {
@@ -93,9 +122,11 @@ nav a::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -4px;
+    bottom: -0.25rem;
+    /* 4px / 16px = 0.25rem */
     width: 0%;
-    height: 2px;
+    height: 0.125rem;
+    /* 2px / 16px = 0.125rem */
     background: var(--secondary-color);
     transition: width 0.2s ease;
 }
@@ -107,12 +138,16 @@ nav a:hover::after {
 /* Botón agendar */
 .btn-date-navbar {
     background: linear-gradient(to bottom right, var(--secondary-color), var(--secondary-color-light));
-    color: #fff;
-    padding: 10px 20px;
+    color: var(--white-color);
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
     font-weight: bold;
-    border-radius: 20px;
+    border-radius: 1.25rem;
+    /* 20px */
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.3);
+    font-size: 1rem;
+    /* Adjusted font size */
 }
 
 .btn-date-navbar:hover {
@@ -125,9 +160,9 @@ nav a:hover::after {
 
 /* Estilo cuando haces scroll */
 .navbar.scrolled {
-    background: rgba(184, 184, 184, 0.8);
-    /* Puedes ajustar este color */
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(0.625rem);
+    /* 10px */
     border-bottom: none;
     transition: all 0.3s ease-in-out;
 }
@@ -139,37 +174,40 @@ nav a:hover::after {
 
 .navbar.scrolled .logo,
 .navbar.scrolled a {
-    color: #fff;
+    color: var(--primary-color);
 }
 
 .navbar.scrolled .btn-date-navbar {
-    background: linear-gradient(to bottom right, #fff, #eee);
+    background: linear-gradient(to bottom right, var(--white-color), #eee);
     color: var(--secondary-color);
     box-shadow: none;
 }
 
 .navbar.scrolled .btn-date-navbar:hover {
-    background: #fff;
+    background: var(--white-color);
     color: var(--secondary-color);
 }
 
 /* Microinteracción en blanco también */
 .navbar.scrolled nav a:hover::after {
-    background: #fff;
+    background: var(--white-color);
 }
-
 
 /* ===== Responsive ===== */
 .menu-toggle {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    gap: 5px;
+    gap: 0.25rem;
+    border-radius: 2rem;
 }
 
 .menu-toggle span {
-    width: 25px;
-    height: 3px;
+    width: 1.5625rem;
+    /* 25px */
+    height: 0.1875rem;
+    /* 3px */
+    border-radius: 2rem;
     background: var(--primary-color);
     transition: all 0.3s ease;
 }
@@ -177,32 +215,46 @@ nav a:hover::after {
 
 /* Footer */
 .nuevo-footer {
-    background: linear-gradient(to bottom right, var(--primary-color), var(--primary-color-light));
-    color: #fff;
-    padding: 3rem 1rem 1.5rem;
+    background: var(--background-color-light);
+    /* Lighter background for contrast */
+    color: var(--text-color-dark);
+    /* Darker text for readability */
+    padding: 3rem 1rem;
+    /* Increased padding */
     font-family: 'Segoe UI', sans-serif;
 }
 
 .footer-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    /* Space between columns */
     align-items: center;
+    /* Align items to the top */
     gap: 2rem;
-    max-width: 1200px;
+    /* Added gap between columns */
+    max-width: 75rem;
+    /* 1200px */
     margin: auto;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.1);
+    /* Subtle border */
     padding-bottom: 2rem;
+    /* Added padding */
 }
 
 .footer-col {
-    flex: 1 1 250px;
+    flex: 1 1 20rem;
+    /* Adjusted flex basis */
+    margin-bottom: 1rem;
+    /* Added margin-bottom for spacing */
 }
 
 .footer-col h3 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: var(--secondary-color);
+    color: var(--primary-color);
+    /* Primary color for headings */
+    font-weight: 600;
+    /* Added font-weight */
 }
 
 .footer-col ul {
@@ -219,16 +271,20 @@ nav a:hover::after {
 .footer-col li i {
     margin-right: 0.5rem;
     color: var(--secondary-color);
+    /* Secondary color for icons */
 }
 
 .footer-col a {
-    color: #fff;
+    color: var(--text-color-dark);
+    /* Dark text for links */
     text-decoration: none;
     transition: color 0.3s ease;
+    /* Smooth transition for hover */
 }
 
 .footer-col a:hover {
-    color: var(--secondary-color-light);
+    color: var(--secondary-color);
+    /* Change color on hover */
 }
 
 .social-icons a {
@@ -236,17 +292,23 @@ nav a:hover::after {
     margin-right: 1rem;
     display: inline-block;
     transition: transform 0.3s ease, color 0.3s ease;
-    color: #fff;
+    /* Added transform transition */
+    color: var(--text-color-dark);
+    /* Dark text for social icons */
 }
 
 .social-icons a:hover {
     transform: scale(1.2);
-    color: var(--secondary-color-light);
+    /* Scale effect on hover */
+    color: var(--secondary-color);
+    /* Change color on hover */
 }
+
 
 .footer-col.mensaje h3 {
     font-size: 1.6rem;
     font-weight: bold;
+    margin: 0;
 }
 
 .footer-col.mensaje span {
@@ -258,43 +320,46 @@ nav a:hover::after {
     font-size: 0.95rem;
     opacity: 0.9;
     font-style: italic;
+    /* Italic style for emphasis */
 }
 
 .footer-bottom {
     text-align: center;
     margin-top: 2rem;
     font-size: 0.85rem;
-    color: #eee;
+    color: #666;
+    /* Darker gray for footer text */
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .footer-col {
-        max-width: 100%;
-    }
-
-    .social-icons {
-        justify-content: center;
-    }
+.footer-bottom p:last-child {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    opacity: 0.8;
+    /* Slightly faded for distinction */
 }
 
 /* -- ADAPTACION A MOVIL -- */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 48em) {
+
+    /* 768px / 16px = 48em */
     .menu-toggle {
         display: flex;
     }
 
     .navbar {
-        width: 100%;
-        border-radius: 0;
-        left: 0;
+        width: 90%;
+        /* Adjusted width for better mobile fit */
+        border-radius: 0.5rem;
+        /* Keep some border-radius */
+        left: 5%;
+        /* Center the navbar */
         flex-direction: row;
+        padding: 0.8rem 1.5rem;
+        /* Adjusted padding */
+        margin: 0.5rem auto;
+        /* Center with auto margins */
+        justify-content: center;
+        gap: 2rem;
     }
 
     nav {
@@ -302,12 +367,25 @@ nav a:hover::after {
         top: 100%;
         left: 0;
         width: 100%;
-        background: #fff;
+        background: var(--white-color);
         display: none;
         flex-direction: column;
         align-items: center;
         padding: 1rem 0;
-        border-top: 1px solid #ddd;
+        border-top: 0.0625rem solid #ddd;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        /* 1px */
+        box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+        /* Added shadow for dropdown */
+    }
+
+    #navMenu.scrolled {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(0.625rem);
+        /* 10px */
+        border-bottom: none;
+        transition: all 0.3s ease-in-out;
     }
 
     nav.show {
@@ -319,23 +397,56 @@ nav a:hover::after {
         gap: 1rem;
     }
 
-    .btn-date-navbar {
-        border-radius: 10px;
+    nav a {
+        font-size: 1.1rem;
+        /* Slightly larger font for mobile menu */
     }
 
-    .footer-contenido {
+    .btn-date-navbar {
+        border-radius: 0.625rem;
+        /* 10px */
+        padding: 0.75rem 1.5rem;
+        /* Adjusted padding for mobile button */
+        font-size: 1.1rem;
+        /* Adjusted font size for mobile button */
+    }
+
+    .footer-container {
         flex-direction: column;
+        /* Stack columns on mobile */
         align-items: center;
+        /* Center items */
+        text-align: center;
+        /* Center text */
+        gap: 0;
+        max-height: 50%;
+    }
+
+    .footer-col {
+        flex: 1;
+        max-width: 100%;
+        /* Full width for mobile */
+        margin-bottom: 1.5rem;
+        /* Increased margin for mobile */
+    }
+
+    .social-icons {
+        justify-content: center;
+        /* Center social icons */
+    }
+
+    .footer-col.mensaje {
+        order: -1;
+        /* Move message column to the top on mobile */
     }
 }
 
 /* -- ANIMACIONES -- */
-
 @keyframes fade-in {
     from {
         opacity: 0;
-        transform: translateY(20px);
-        /* Opcional: Añadir desplazamiento vertical */
+        transform: translateY(1.25rem);
+        /* 20px */
     }
 
     to {
@@ -351,9 +462,7 @@ nav a:hover::after {
 .presentacion-contenido,
 .mision-vision-valores .card {
     opacity: 0;
-    /* Inicialmente oculto */
     animation: fade-in 1s ease-in-out forwards;
-    /* Aplicar animación */
     animation-delay: 0.1s;
 }
 

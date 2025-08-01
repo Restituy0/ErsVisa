@@ -5,32 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Css/main.css">
-    <link rel="icon" type="image/png" href="../Img/Logo-ErsVisa-Original.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/Css/all.min.Css">
+    <link rel="icon" type="image/png" href="../Img/ErsVisa.ico"> <!-- Corrected path for favicon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/Css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/f66f1c652f.js" crossorigin="anonymous"></script>
     <title>Nuestro Equipo - ErsVisa</title>
     <style>
-
         /* Font Russo One */
         @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 
         /* - Equipo -  */
 
         .presentacion-equipo {
-            /* Cambios de construccion */
             min-height: 100vh;
-            background-color: #003366;
-            color: #ffffff;
-            padding: 80px 0;
+            background-color: var(--primary-color); /* Using CSS variable */
+            color: var(--white-color); /* Using CSS variable */
+            padding: 5rem 1.25rem; /* Adjusted from 80px */
             text-align: center;
+            display: flex; /* Added flex for centering content */
+            align-items: center;
+            justify-content: center;
         }
 
         .presentacion-contenido {
-            /* max-width: 800px; */
-            text-align: center;
+            max-width: 50rem; /* 800px */
+            margin: 0 auto; /* Center content */
             display: flex;
             align-items: center;
             flex-direction: column;
@@ -38,13 +39,16 @@
         }
 
         .presentacion-contenido h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 2.8rem; /* Adjusted from 2.5rem */
+            margin-bottom: 1.25rem; /* 20px */
+            font-weight: 700; /* Made bolder */
         }
 
         .presentacion-contenido p {
-            font-size: 1.1rem;
-            line-height: 1.5;
+            font-size: 1.2rem; /* Adjusted from 1.1rem */
+            line-height: 1.6;
+            max-width: 45rem; /* Added max-width for readability */
+            margin: 0 auto; /* Center paragraph */
         }
 
         .fundadores-descripcion {
@@ -52,88 +56,106 @@
             line-height: 1.5;
         }
 
-
         .equipo {
-            padding: 40px 0;
-            background-color: #f5f5f5;
+            padding: 2.5rem 0; /* Adjusted from 40px */
+            background-color: var(--background-color-light); /* Using CSS variable */
             text-align: center;
         }
 
         .personas-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 1.25rem; /* 20px */
             justify-content: center;
-            margin-top: 40px;
+            margin-top: 2.5rem; /* 40px */
+            padding: 0 1rem; /* Added horizontal padding */
         }
 
         .persona {
-            flex: 1 1 calc(33.33% - 40px);
-            max-width: 350px;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            flex: 1 1 calc(33.33% - 1.25rem); /* Adjusted flex basis */
+            max-width: 22rem; /* 350px */
+            padding: 1.5rem; /* 20px */
+            background-color: var(--white-color); /* Using CSS variable */
+            box-shadow: 0px 0px 1.25rem rgba(0, 0, 0, 0.1); /* 20px */
+            border-radius: 0.625rem; /* 10px */
             overflow: hidden;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; /* Added box-shadow transition */
         }
 
         .persona:hover {
-            transform: translateY(-10px);
+            transform: translateY(-0.625rem); /* 10px */
+            box-shadow: 0px 0.5rem 1.5rem rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
         }
 
         .imagen {
-            width: 100px;
-            height: 100px;
+            width: 7.5rem; /* 120px - Adjusted from 100px */
+            height: 7.5rem; /* 120px - Adjusted from 100px */
             background-size: cover;
             background-position: center;
             border-radius: 50%;
-            /* Hacer la imagen circular */
-            margin: 0 auto;
-            /* Centrar horizontalmente */
-            margin-top: 20px;
-            /* Añadir espacio arriba */
-            margin-bottom: 10px;
-            /* Añadir espacio abajo */
+            margin: 0 auto 0.625rem; /* 10px - Adjusted margin */
+            border: 0.1875rem solid var(--secondary-color); /* Added border */
+            box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2); /* Added shadow */
+        }
+
+        .persona .info h1 {
+            font-size: 1.6rem; /* Adjusted font size */
+            margin-bottom: 0.5rem; /* Added margin */
+            color: var(--primary-color); /* Using CSS variable */
+        }
+
+        .persona .info h3 {
+            font-size: 1.1rem; /* Adjusted font size */
+            margin-bottom: 0.75rem; /* Added margin */
+            color: #555; /* Slightly lighter color */
+        }
+
+        .persona .info p {
+            font-size: 0.95rem; /* Adjusted font size */
+            line-height: 1.4; /* Adjusted line height */
+            color: #666; /* Lighter color */
         }
 
         /* Estilos para las secciones adicionales */
 
         /* Estilos para la sección de Historia */
         .historia {
-            padding: 60px 0;
+            padding: 3.75rem 1.25rem; /* 60px 20px */
+            background-color: var(--background-color); /* Using CSS variable */
         }
 
         .contenido {
-            max-width: 800px;
+            max-width: 50rem; /* 800px */
             margin: 0 auto;
             text-align: center;
         }
 
         .titulo-seccion {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #003366;
+            font-size: 2.2rem; /* Adjusted from 2rem */
+            margin-bottom: 1.25rem; /* 20px */
+            color: var(--primary-color); /* Using CSS variable */
+            font-weight: 600; /* Added font-weight */
         }
 
         .descripcion {
-            font-size: 1.2rem;
+            font-size: 1.1rem; /* Adjusted from 1.2rem */
             line-height: 1.6;
-            margin-bottom: 20px;
+            margin-bottom: 1.25rem; /* 20px */
             color: #333;
         }
 
         /* Estilos para la sección de Logros */
         .logros {
-            padding: 60px 0;
-            border-top: 1px solid #cccccc;
+            padding: 3.75rem 1.25rem; /* 60px 20px */
+            border-top: 0.0625rem solid #cccccc; /* 1px */
+            background-color: var(--background-color-light); /* Using CSS variable */
         }
 
         .contenido-logros {
-            max-width: 800px;
+            max-width: 50rem; /* 800px */
             margin: 0 auto;
             text-align: center;
         }
@@ -142,23 +164,88 @@
             list-style: none;
             padding: 0;
             margin: 0;
+            text-align: left; /* Align list items to left */
+            max-width: 35rem; /* Added max-width for list */
+            margin: 0 auto; /* Center the list */
         }
 
         .logros-lista li {
-            font-size: 1.2rem;
+            font-size: 1.1rem; /* Adjusted from 1.2rem */
             line-height: 1.6;
-            margin-bottom: 10px;
+            margin-bottom: 0.625rem; /* 10px */
             color: #333;
+            padding-left: 1.5rem; /* Space for bullet */
+            position: relative;
         }
 
         .logros-lista li:before {
             content: "\2022";
-            /* Agregar un punto circular */
-            color: #003366;
+            color: var(--primary-color); /* Using CSS variable */
             font-weight: bold;
             display: inline-block;
             width: 1em;
             margin-left: -1em;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Responsive adjustments for Equipo.html */
+        @media (max-width: 48em) { /* 768px / 16px = 48em */
+            .presentacion-equipo {
+                padding: 4rem 1rem; /* Adjusted padding for mobile */
+            }
+
+            .presentacion-contenido h2 {
+                font-size: 2.2rem; /* Smaller font for mobile */
+            }
+
+            .presentacion-contenido p {
+                font-size: 1rem; /* Smaller font for mobile */
+            }
+
+            .personas-container {
+                flex-direction: column; /* Stack persons vertically */
+                align-items: center;
+                gap: 1.5rem; /* Adjusted gap */
+            }
+
+            .persona {
+                max-width: 90%; /* Wider for mobile */
+                padding: 1.25rem; /* Smaller padding */
+            }
+
+            .imagen {
+                width: 6rem; /* Smaller image for mobile */
+                height: 6rem;
+            }
+
+            .persona .info h1 {
+                font-size: 1.4rem; /* Smaller font for mobile */
+            }
+
+            .persona .info h3 {
+                font-size: 1rem; /* Smaller font for mobile */
+            }
+
+            .persona .info p {
+                font-size: 0.9rem; /* Smaller font for mobile */
+            }
+
+            .historia, .logros {
+                padding: 2.5rem 1rem; /* Smaller padding for mobile */
+            }
+
+            .titulo-seccion {
+                font-size: 1.8rem; /* Smaller font for mobile */
+            }
+
+            .descripcion, .logros-lista li {
+                font-size: 0.95rem; /* Smaller font for mobile */
+            }
+
+            .logros-lista {
+                max-width: 90%; /* Wider for mobile */
+            }
         }
     </style>
 </head>
@@ -169,7 +256,7 @@
         <div class="logo">ERS<span>VISA</span></div>
 
         <!-- Botón hamburguesa para móviles -->
-        <div class="menu-toggle" id="menuToggle">
+        <div class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
             <span></span>
             <span></span>
             <span></span>
@@ -187,9 +274,9 @@
     </header>
 
     <!-- Sección de Historia -->
-    <!-- <section class="historia">
+    <!-- <section class="historia" role="region" aria-labelledby="historia-heading">
         <div class="contenido">
-            <h2 class="titulo-seccion">Nuestra Historia</h2>
+            <h2 class="titulo-seccion" id="historia-heading">Nuestra Historia</h2>
             <p class="descripcion">
                 ERS VISA fue fundada en el año 2000 con el objetivo de brindar asesoramiento legal en temas migratorios.
                 A lo largo de los años, hemos ayudado a numerosos clientes a lograr sus metas y sueños de migración.
@@ -198,18 +285,18 @@
     </section> -->
 
     <!-- Presentacion de Equipo -->
-    <section class="presentacion-equipo">
+    <section class="presentacion-equipo" role="region" aria-labelledby="equipo-heading">
         <div class="presentacion-contenido">
-            <h2>EN CONSTRUCCION</h2>
-            <p>Aun no estas listo para ver el tremendo diseño que está cocinandose.</p>
+            <h2 id="equipo-heading">EN CONSTRUCCION</h2>
+            <p>Aun no estas listo para ver el tremendo diseño que está cocinándose.</p>
         </div>
     </section>
 
     <!-- Equipo -->
-    <!-- <section class="equipo">
+    <!-- <section class="equipo" role="region" aria-labelledby="team-heading">
         <div class="personas-container">
             <div class="persona">
-                <div class="imagen" style="background-image: url('../Img/EdwardG.JPG');"></div>
+                <div class="imagen" style="background-image: url('../Img/EdwardG.JPG');" role="img" aria-label="Edward Restituyo"></div>
                 <div class="info">
                     <h1>Edward Restituyo</h1>
                     <h3>Abogado Migratorio</h3>
@@ -219,7 +306,7 @@
                 </div>
             </div>
             <div class="persona">
-                <div class="imagen" style="background-image: url('../Img/AlexG.jpg');"></div>
+                <div class="imagen" style="background-image: url('../Img/AlexG.jpg');" role="img" aria-label="Alexandra Polanco"></div>
                 <div class="info">
                     <h1>Alexandra Polanco</h1>
                     <h3>Abogada Migratoria</h3>
@@ -232,9 +319,9 @@
     </section> -->
 
     <!-- Sección de Logros -->
-    <!-- <section class="logros">
+    <!-- <section class="logros" role="region" aria-labelledby="logros-heading">
         <div class="contenido-logros">
-            <h2 class="titulo-seccion">Nuestros Logros</h2>
+            <h2 class="titulo-seccion" id="logros-heading">Nuestros Logros</h2>
             <ul class="logros-lista">
                 <li>Hemos asesorado a miles de personas en su proceso de migración.</li>
                 <li>Nuestro equipo ha participado en conferencias internacionales sobre migración y legalidad.</li>
@@ -243,42 +330,61 @@
         </div>
     </section> -->
 
-    <!--PIE DE PAGINA-->
-    <footer class="nuevo-footer">
+     <!-- Footer -->
+    <footer class="nuevo-footer" role="contentinfo">
         <div class="footer-container">
 
             <!-- Columna: Contacto -->
             <div class="footer-col contacto">
                 <h3>Contáctanos</h3>
                 <ul>
-                    <li><i class="fas fa-envelope"></i><a href="mailto:ersvisa@gmail.com">ersvisa@gmail.com</a></li>
-                    <li><i class="fab fa-whatsapp"></i><a href="https://wa.link/uropst" target="_blank">Lic. Edward Restituyo: +1
-                            809-397-5678</a></li>
-                    <li><i class="fab fa-whatsapp"></i><a href="https://wa.link/rfbh0i" target="_blank">Lic Mariela Lopez: +1
-                            849-359-3318</a></li>
+                    <li><i class="fas fa-envelope" aria-hidden="true"></i><a
+                            href="mailto:ersvisa@gmail.com">ersvisa@gmail.com</a></li>
+                    <li><i class="fab fa-whatsapp" aria-hidden="true"></i><a href="https://wa.link/uropst"
+                            target="_blank" rel="noopener noreferrer">Lic. Edward Restituyo: +1 809-397-5678</a></li>
+                    <li><i class="fab fa-whatsapp" aria-hidden="true"></i><a href="https://wa.link/rfbh0i"
+                            target="_blank" rel="noopener noreferrer">Lic. Mariela Lopez: +1 849-359-3318</a></li>
+                    <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><a
+                            href="Sections/NuestrasOficinas.html">Nuestras Oficinas</a></li>
                 </ul>
             </div>
 
-            <!-- Columna: Redes -->
+            <!-- Columna: Navegación Rápida -->
+            <div class="footer-col navegacion-rapida">
+                <h3>Navegación Rápida</h3>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="Sections/NuestrasOficinas.html">Oficinas</a></li>
+                    <li><a href="Sections/Equipo.html">Sobre Nosotros</a></li>
+                    <li><a href="Sections/Agenda.html">Reservar Cita</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna: Redes Sociales -->
             <div class="footer-col redes">
-                <h3>Redes Sociales</h3>
+                <h3>Síguenos</h3>
                 <div class="social-icons">
-                    <a href="https://www.facebook.com/ersvisa/" target="_blank" aria-label="Facebook"><i
-                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/ersvisa/" target="_blank" aria-label="Facebook"
+                        rel="noopener noreferrer"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
                     <a href="https://www.instagram.com/ersvisa_abogados_migratorios/" target="_blank"
-                        aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        aria-label="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"
+                            aria-hidden="true"></i></a>
+                    <a href="#" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer"><i
+                            class="fab fa-linkedin" aria-hidden="true"></i></a>
                 </div>
             </div>
 
             <!-- Columna: Mensaje institucional -->
             <div class="footer-col mensaje">
                 <h3>ERS<span>VISA</span></h3>
-                <p>Comprometidos con tu futuro migratorio.</p>
+                <p>Tu socio confiable en el camino hacia tus sueños migratorios.</p>
             </div>
+
         </div>
 
         <div class="footer-bottom">
             <p>&copy; 2025 ERSVISA. Todos los derechos reservados.</p>
+            <p>Diseñado por Dariel Restituyo</p>
         </div>
     </footer>
 

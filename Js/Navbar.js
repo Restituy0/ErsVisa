@@ -15,8 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (scrollTop > 50) {
+      navMenu.classList.add('scrolled');
       menu.classList.add('scrolled');
     } else {
+      navMenu.classList.remove('scrolled');
       menu.classList.remove('scrolled');
     }
 
@@ -28,5 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Toggle hamburguesa
   menuToggle.addEventListener('click', () => {
     navMenu.classList.toggle('show');
+    menu.classList.toggle('border');
   });
 });
