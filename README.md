@@ -16,10 +16,10 @@ Página web informativa que representa la presencia digital actual de ErsVisa. D
 
 ```
 ErsVisa/
-├── Css/          # Hojas de estilo
-├── Img/          # Recursos gráficos
-├── Js/           # Scripts de interactividad
-├── Sections/     # Secciones modulares del sitio
+├── css/          # Hojas de estilo
+├── img/          # Recursos gráficos
+├── js/           # Scripts de interactividad
+├── pages/     # Secciones modulares del sitio
 └── index.html    # Página principal
 ```
 
