@@ -1,0 +1,327 @@
+/* =========================================================
+   ERSVISA — booking.css (pages/booking.html)
+========================================================= */
+
+.booking-page {
+    padding: 3rem 1.25rem 5rem;
+}
+
+.booking-grid {
+    display: grid;
+    grid-template-columns: minmax(16rem, 22rem) 1fr;
+    gap: 2.5rem;
+    max-width: 68rem;
+    margin: 0 auto;
+    align-items: start;
+}
+
+/* ------------------ Info  ------------------ */
+.booking-info-card {
+    background-color: var(--white-color);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    padding: 2rem;
+    border: 0.0625rem solid var(--border-color);
+}
+
+.booking-info-card h2 {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    margin-bottom: 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    font-size: 0.95rem;
+    color: var(--text-color-dark);
+    line-height: 1.5;
+}
+
+.contact-item img {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: 0.15rem;
+    flex-shrink: 0;
+}
+
+/* ------------------ WhatsApp ------------------ */
+.whatsapp-card {
+    margin-top: 1.75rem;
+    background: linear-gradient(135deg, #007a10 0%, #128c7e 100%);
+    border-radius: var(--radius-md);
+    color: var(--white-color);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+    text-align: left;
+}
+
+.whatsapp-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.1rem;
+}
+
+.whatsapp-info i.whatsapp-glyph {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.whatsapp-info h3 {
+    margin: 0;
+    font-size: 1.15em;
+    font-weight: bold;
+}
+
+.whatsapp-info p {
+    margin: 0.15rem 0 0;
+    font-size: 0.88em;
+    opacity: 0.9;
+}
+
+.btn-whatsapp {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--white-color);
+    border-radius: 2rem;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-whatsapp:hover {
+    background-color: rgba(255, 255, 255, 0.28);
+}
+
+/* ------------------ Form ------------------ */
+.contact-form {
+    background-color: var(--white-color);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    padding: 2.5rem;
+    border: 0.0625rem solid var(--border-color);
+}
+
+.form-heading {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.free-badge {
+    background: var(--background-color-light);
+    color: var(--primary-color);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    border: 0.0625rem solid var(--border-color);
+}
+
+.response-time {
+    font-size: 0.88rem;
+    color: var(--text-color-light);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+.form-group {
+    margin-bottom: 1.4rem;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    margin-bottom: 0.4rem;
+    display: block;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.9rem;
+    border-radius: var(--radius-sm);
+    border: 0.0625rem solid var(--border-color);
+    font-size: 1rem;
+    color: var(--text-color-dark);
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--primary-color-light);
+    box-shadow: 0 0 0 0.1875rem rgba(1, 16, 99, 0.15);
+    outline: none;
+}
+
+.form-group .error-message {
+    display: none;
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+    margin-top: 0.35rem;
+}
+
+.form-group.invalid input {
+    border-color: var(--secondary-color);
+}
+
+.form-group.invalid .error-message {
+    display: block;
+}
+
+/* Honeypot anti-spam: hidden from humans, visible to bots */
+.hp-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-light) 100%);
+    color: var(--white-color);
+    padding: 0.95rem 1.9rem;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-submit:hover {
+    background: var(--secondary-color);
+    transform: translateY(-0.125rem);
+    box-shadow: var(--shadow-md);
+}
+
+.form-note {
+    font-size: 0.8rem;
+    color: var(--text-color-light);
+    margin-top: 1rem;
+}
+
+/* ------------------ What to expect next ------------------ */
+.next-steps-section {
+    max-width: 68rem;
+    margin: 4rem auto 0;
+    padding: 0 1.25rem;
+}
+
+.next-steps-section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.next-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.next-step {
+    background: var(--white-color);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+    padding: 1.75rem 1.5rem;
+    text-align: center;
+}
+
+.next-step .next-step-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--background-color-light);
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin: 0 auto 1rem;
+}
+
+.next-step h3 {
+    color: var(--primary-color);
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+}
+
+.next-step p {
+    font-size: 0.9rem;
+    color: var(--text-color-light);
+    line-height: 1.6;
+}
+
+/* ------------------ Responsive ------------------ */
+@media (max-width: 62em) {
+    .booking-grid {
+        grid-template-columns: 1fr;
+        max-width: 40rem;
+    }
+}
+
+@media (max-width: 48em) {
+    .booking-page {
+        padding: 2.5rem 1rem 3.5rem;
+    }
+
+    .booking-info-card,
+    .contact-form {
+        padding: 1.75rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .next-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .next-steps-section {
+        margin-top: 3rem;
+    }
+}

@@ -1,0 +1,561 @@
+/* =========================================================
+   ERSVISA — about.css (pages/about.html — "Nosotros")
+========================================================= */
+
+/* ----- Mission / Vision / Valores ----- */
+.mission-vision-values {
+    padding: 4.5rem 1.25rem;
+    background: var(--background-color);
+}
+
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    max-width: 75rem;
+    margin: 2.5rem auto 0;
+}
+
+.mission-vision-values .card {
+    background: var(--white-color);
+    border-radius: var(--radius-md);
+    padding: 2rem 1.75rem;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fade-in 0.8s ease-in-out forwards;
+}
+
+.mission-vision-values .card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.mission-vision-values .card:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.mission-vision-values .card:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.mission-vision-values .card:hover {
+    transform: translateY(-0.35rem);
+    box-shadow: var(--shadow-md);
+}
+
+.mission-vision-values .card i {
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--background-color-light);
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin: 0 auto 1.1rem;
+}
+
+.mission-vision-values .card h3 {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.mission-vision-values .card p {
+    color: var(--text-color-light);
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+/* ----- History ----- */
+.history-section {
+    padding: 5rem 1.25rem;
+    background-color: var(--white-color);
+    overflow: hidden;
+}
+
+.history-grid {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+}
+
+.history-image {
+    flex: 1;
+    position: relative;
+}
+
+.history-image img {
+    width: 100%;
+    height: 22rem;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    z-index: 1;
+}
+
+.history-image::before {
+    content: "";
+    position: absolute;
+    top: -1.25rem;
+    left: -1.25rem;
+    width: 100%;
+    height: 100%;
+    border: 0.375rem solid var(--background-color-light);
+    border-radius: var(--radius-md);
+    z-index: 0;
+}
+
+.history-section .history-content {
+    flex: 1;
+    text-align: center;
+}
+
+.history-section .history-description {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-color-light);
+    margin-bottom: 1.1rem;
+    text-align: justify;
+}
+
+.history-section .history-description:last-child {
+    margin-bottom: 0;
+}
+
+/* ----- Team ----- */
+.team-section {
+    padding: 4.5rem 1.25rem;
+    background-color: var(--background-color-light);
+    text-align: center;
+}
+
+.team-category {
+    text-align: left;
+    max-width: 60rem;
+    margin: 0 auto 3rem;
+}
+
+.team-category:first-of-type {
+    margin-top: 2.75rem;
+}
+
+.team-category:last-of-type {
+    margin-bottom: 2.5rem;
+}
+
+.team-category-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 0.125rem solid var(--border-color);
+}
+
+.team-category-title i {
+    color: var(--secondary-color);
+    font-size: 1rem;
+}
+
+.team-members-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.team-member-vacant {
+    border: 0.125rem dashed var(--border-color);
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.team-member-vacant .avatar-panel {
+    background: var(--background-color-light);
+}
+
+.team-member-vacant .avatar {
+    background: rgba(1, 16, 99, 0.08);
+    color: var(--primary-color);
+    border-color: var(--border-color);
+}
+
+.team-member-vacant .info-header h2 {
+    font-style: italic;
+    color: var(--text-color-light);
+    font-weight: 600;
+}
+
+.team-member {
+    display: flex;
+    align-items: stretch;
+    background-color: var(--white-color);
+    box-shadow: var(--shadow-sm);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.team-member:hover {
+    transform: translateY(-0.35rem);
+    box-shadow: var(--shadow-lg);
+}
+
+.team-member .avatar-panel {
+    flex: 0 0 12rem;
+    background: linear-gradient(160deg, var(--primary-color), var(--primary-color-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-member .avatar-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(255, 255, 255, 0.1) 0%, transparent 40%);
+}
+
+.team-member .avatar {
+    position: relative;
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--white-color);
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.9rem;
+    border: 0.1875rem solid rgba(255, 255, 255, 0.5);
+}
+
+.team-member .info {
+    padding: 1.75rem 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.team-member .info-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin-bottom: 0.2rem;
+}
+
+.team-member .info h2 {
+    font-size: 1.35rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.team-member .info .job-title {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.team-member .credentials {
+    font-size: 0.82rem;
+    color: var(--text-color-light);
+    margin-bottom: 0.85rem;
+}
+
+.team-member .bio {
+    font-size: 0.95rem;
+    color: var(--text-color-light);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.team-member .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.1rem;
+}
+
+.team-member .tag {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    background: var(--background-color-light);
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+}
+
+.team-member .contact-links {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.team-member .contact-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 0.45rem 0.9rem;
+    border-radius: 2rem;
+    border: 0.0625rem solid var(--border-color);
+    transition: all 0.25s ease;
+}
+
+.team-member .contact-links a:hover {
+    background: var(--primary-color);
+    color: var(--white-color);
+    border-color: var(--primary-color);
+}
+
+.team-member .contact-links a.whatsapp:hover {
+    background: #128c7e;
+    border-color: #128c7e;
+}
+
+.team-note {
+    margin-top: 2.5rem;
+    font-size: 0.85rem;
+    color: var(--text-color-light);
+}
+
+/* ----- Achievements / stats + milestones timeline ----- */
+.achievements {
+    padding: 2rem 1.25rem;
+    background: linear-gradient(120deg, var(--primary-color), var(--primary-color-light));
+    color: var(--white-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.achievements::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.12) 0%, transparent 70%);
+    animation: rotateGradient 12s linear infinite;
+}
+
+@keyframes rotateGradient {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 64rem;
+    margin: 2.5rem auto 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.achievement-item {
+    background: rgba(255, 255, 255, 0.06);
+    border: 0.0625rem solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-md);
+    padding: 1.75rem 1rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.achievement-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-0.25rem);
+}
+
+.achievements .section-heading {
+    max-width: 30%;
+}
+
+.achievements .section-title {
+    font-style: normal;
+    color: var(--white-color);
+    position: relative;
+    z-index: 2;
+}
+
+.achievements .section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.25em;
+    height: 0.14em;
+    background: var(--secondary-color);
+    border-radius: 0.07em;
+    z-index: -1;
+    opacity: 1;
+}
+
+.achievement-item i {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 0.75rem;
+}
+
+.achievement-item strong {
+    display: block;
+    font-size: 2.1rem;
+    font-weight: 700;
+}
+
+.achievement-item span {
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+
+/* Milestones timeline */
+.milestones-timeline {
+    max-width: 50rem;
+    margin: 3.5rem auto 0;
+    position: relative;
+    z-index: 1;
+}
+
+.milestones-timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.68rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 0.125rem;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.milestone {
+    position: relative;
+    padding-left: 2.25rem;
+    margin-bottom: 1.75rem;
+}
+
+.milestone:last-child {
+    margin-bottom: 0;
+}
+
+.milestone::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.3rem;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 50%;
+    background: var(--secondary-color-light);
+    border: 0.1875rem solid var(--primary-color);
+    box-shadow: 0 0 0 0.1875rem rgba(255, 255, 255, 0.25);
+}
+
+.milestone .milestone-year {
+    font-family: 'Russo One', sans-serif;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.milestone p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    line-height: 1.55;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 48em) {
+    .mission-vision-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .history-grid {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .history-image {
+        width: 100%;
+        order: -1;
+    }
+
+    .history-image img {
+        height: 15rem;
+    }
+
+    .history-image::before {
+        top: -0.75rem;
+        left: -0.75rem;
+    }
+
+    .history-section .history-content {
+        text-align: center;
+    }
+
+    .team-category-title {
+        font-size: 1rem;
+    }
+
+    .mission-vision-values,
+    .history-section,
+    .team-section,
+    .achievements {
+        padding: 3rem 1rem;
+    }
+
+    .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .achievements .section-heading {
+    max-width: none;
+    }
+
+    .team-member {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .team-member .avatar-panel {
+        flex: none;
+        padding: 2rem 0;
+    }
+
+    .team-member .info {
+        padding: 1.5rem 1.5rem 1.75rem;
+    }
+
+    .team-member .contact-links {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 22.5em) {
+    .team-member .avatar {
+        width: 5.25rem;
+        height: 5.25rem;
+        font-size: 1.5rem;
+    }
+}

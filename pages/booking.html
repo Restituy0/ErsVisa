@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar cita | ErsVisa</title>
+    <meta name="description"
+        content="Reserva tu cita con ErsVisa. Contáctanos por formulario, correo o WhatsApp y agenda tu consulta migratoria en Santo Domingo.">
+    <link rel="canonical" href="https://restituy0.github.io/ErsVisa/pages/booking.html" />
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/booking.css">
+    <link rel="icon" href="../img/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/f66f1c652f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="site-header"></div>
+
+    <section class="page-intro" role="region" aria-labelledby="booking-heading">
+        <div class="page-intro-content">
+            <span class="eyebrow-label">Reserva tu cita</span>
+            <h1 id="booking-heading">Hablemos de tu proceso migratorio</h1>
+            <p>Tu primera consulta es gratuita. Cuéntanos brevemente tu situación y te contactaremos para
+                coordinarla.</p>
+        </div>
+    </section>
+
+    <hr class="line-separator" aria-hidden="true">
+
+    <main class="booking-page">
+        <div class="booking-grid">
+            <!-- Column: contact information -->
+            <div class="booking-info">
+                <div class="booking-info-card">
+                    <h2>Información de contacto</h2>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <img src="../img/icon-location.svg" alt="" loading="lazy">
+                            <span>Plaza Rodriguez Estrella, Calle Cristo, Santo Domingo, D.N.</span>
+                        </div>
+                        <div class="contact-item">
+                            <img src="../img/icon-phone.svg" alt="" loading="lazy">
+                            <span>809-397-5678 | 829-321-9182</span>
+                        </div>
+                        <div class="contact-item">
+                            <img src="../img/icon-email.svg" alt="" loading="lazy">
+                            <span>ersvisa@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="whatsapp-card">
+                    <div class="whatsapp-info">
+                        <i class="fab fa-whatsapp whatsapp-glyph" aria-hidden="true"></i>
+                        <div>
+                            <h3>¿Prefieres WhatsApp?</h3>
+                            <p>Respuesta rápida en horario laboral.</p>
+                        </div>
+                    </div>
+                    <a href="https://wa.link/uropst" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Escribir por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column: form -->
+            <form action="https://formsubmit.co/ersvisa@gmail.com" method="POST" class="contact-form"
+                aria-label="Formulario de contacto para reservar cita">
+                <div class="form-heading">
+                    <h2>Solicitar consulta</h2>
+                    <span class="free-badge">Primera consulta gratis</span>
+                </div>
+                <p class="response-time"><i class="fa-regular fa-clock" aria-hidden="true"></i> Normalmente
+                    respondemos en menos de 24 horas hábiles.</p>
+
+                <!-- Honeypot anti-spam field: invisible to humans, catches bots -->
+                <div class="form-group hp-field" aria-hidden="true">
+                    <label for="company">No completar este campo</label>
+                    <input type="text" id="company" name="_honey" tabindex="-1" autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Nombre Completo</label>
+                    <input type="text" id="name" name="name" required aria-required="true"
+                        placeholder="Tu nombre completo">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required aria-required="true"
+                            placeholder="tu.correo@ejemplo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" name="phone" required aria-required="true"
+                            placeholder="Ej: 809-123-4567">
+                        <span class="error-message">Ingresa un número de teléfono válido.</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Motivo de la Cita (Opcional)</label>
+                    <textarea id="subject" name="subject" rows="4"
+                        placeholder="Breve descripción del motivo de tu cita..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Enviar Solicitud</button>
+                <p class="form-note">Al enviar este formulario aceptas nuestra <a
+                        href="privacy-policy.html">Política de Privacidad</a>.</p>
+
+                <input type="hidden" name="_next" value="https://restituy0.github.io/ErsVisa/pages/thank-you.html">
+                <input type="hidden" name="_subject" value="Nueva solicitud de cita - ErsVisa">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_honeypot" value="_honey">
+            </form>
+        </div>
+
+        <!-- What to expect next -->
+        <div class="next-steps-section">
+            <h2>¿Qué sucede después de enviar tu solicitud?</h2>
+            <div class="next-steps">
+                <div class="next-step">
+                    <div class="next-step-icon"><i class="fa-solid fa-inbox" aria-hidden="true"></i></div>
+                    <h3>1. Recibimos tu solicitud</h3>
+                    <p>Un asesor revisa los detalles que compartiste sobre tu caso.</p>
+                </div>
+                <div class="next-step">
+                    <div class="next-step-icon"><i class="fa-solid fa-phone-volume" aria-hidden="true"></i></div>
+                    <h3>2. Te contactamos</h3>
+                    <p>Nos comunicamos contigo por teléfono o WhatsApp para coordinar fecha y hora.</p>
+                </div>
+                <div class="next-step">
+                    <div class="next-step-icon"><i class="fa-solid fa-handshake" aria-hidden="true"></i></div>
+                    <h3>3. Tu consulta</h3>
+                    <p>Te recibimos en la oficina que prefieras para tu asesoría personalizada.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="../js/components.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/booking.js"></script>
+</body>
+
+</html>
